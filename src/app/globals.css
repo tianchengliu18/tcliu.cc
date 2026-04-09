@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+/* ── Theme tokens ── */
+:root {
+  --bg-primary: #FAFAF8;
+  --bg-secondary: #F0EFEC;
+  --bg-card: #FFFFFF;
+  --text-primary: #1A1A1D;
+  --text-secondary: #555555;
+  --text-tertiary: #888888;
+  --accent: #B33B2E;
+  --accent-hover: #922F24;
+  --accent-secondary: #2B4C6F;
+  --accent-secondary-hover: #1E3A57;
+  --border: #DAD8D2;
+  --border-light: #ECEAE5;
+  --shadow: rgba(26, 26, 29, 0.06);
+  --shadow-md: rgba(26, 26, 29, 0.1);
+  --texture-opacity: 0.045;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1A1A1D;
+  --bg-secondary: #232326;
+  --bg-card: #28282C;
+  --text-primary: #F0EFEC;
+  --text-secondary: #9A9A9A;
+  --text-tertiary: #666666;
+  --accent: #C94A3C;
+  --accent-hover: #D65A4C;
+  --accent-secondary: #3D6A9E;
+  --accent-secondary-hover: #5080B5;
+  --border: #3A3A3E;
+  --border-light: #2F2F33;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --shadow-md: rgba(0, 0, 0, 0.3);
+  --texture-opacity: 0.03;
+}
+
+@theme inline {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-card: var(--bg-card);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-secondary-hover: var(--accent-secondary-hover);
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+
+  --font-name-en: 'Cormorant Garamond', serif;
+  --font-name-cn: 'ShiMenSong', serif;
+  --font-body: 'Crimson Pro', 'Noto Sans SC', serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* ── Base ── */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Crimson Pro', 'Noto Sans SC', serif;
+  font-size: 1rem;
+  line-height: 2;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Real paper texture overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: var(--texture-opacity);
+  background-image: url('/textures/paper-light.jpg');
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}
+
+/* ── Typography — 3 levels only ── */
+
+/* L: page titles, names — 2.5rem (40px) */
+h1 {
+  font-family: 'Crimson Pro', 'Noto Sans SC', serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* M: section headings — 1.25rem (20px) */
+h2, h3 {
+  font-family: 'Crimson Pro', 'Noto Sans SC', serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  letter-spacing: -0.005em;
+}
+
+/* S: body text — 1rem (16px), already set on body */
+
+/* ── Prose (blog content) ── */
+.prose {
+  line-height: 2;
+  color: var(--text-primary);
+}
+
+.prose h1, .prose h2, .prose h3 {
+  font-family: 'Crimson Pro', 'Noto Sans SC', serif;
+  color: var(--text-primary);
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  color: var(--accent-hover);
+}
+
+.prose code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em;
+  background: var(--bg-secondary);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.prose img {
+  border-radius: 8px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* ── Selection ── */
+::selection {
+  background: var(--accent);
+  color: white;
+}

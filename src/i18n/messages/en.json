@@ -1,0 +1,80 @@
+{
+  "nav": {
+    "home": "Home",
+    "research": "Research",
+    "publications": "Publications",
+    "blog": "Blog",
+    "about": "About",
+    "cv": "CV"
+  },
+  "home": {
+    "greeting": "Hi, I'm",
+    "name": "Tiancheng LIU",
+    "tagline": "Creative AI \u00b7 Calligraphy \u00b7 Multimodal Interaction",
+    "bio": "Ph.D. Candidate at HKUST(GZ), Visiting Researcher at University of Amsterdam. I explore computational aesthetics, human-AI co-creativity, and culturally-grounded generative systems.",
+    "currentRole": "Ph.D. Candidate",
+    "currentAffiliation": "HKUST (Guangzhou)",
+    "visitingRole": "Visiting Researcher",
+    "visitingAffiliation": "University of Amsterdam",
+    "latest": "Latest",
+    "viewAll": "View all"
+  },
+  "research": {
+    "title": "Research",
+    "subtitle": "My work sits at the intersection of multimodal computing, embodied interaction, and generative AI for creative applications.",
+    "calligraphy": {
+      "title": "Computational Calligraphy",
+      "description": "Understanding the structure, aesthetics, and cultural meaning of Chinese calligraphy through computational methods. From quantifying stroke-level features to interpreting full compositions via graph-based modeling and language models."
+    },
+    "cocreation": {
+      "title": "Human-AI Co-Creativity",
+      "description": "Designing systems where humans and AI collaborate in creative processes \u2014 from embodied musical performance to poetry-driven calligraphy generation and interactive authoring tools."
+    },
+    "visualization": {
+      "title": "Visualization & Authoring Tools",
+      "description": "Building human-AI paired tools for visual content creation, including pictorial chart editing and interactive storytelling systems that integrate narrative design with generative techniques."
+    }
+  },
+  "publications": {
+    "title": "Publications",
+    "published": "Published",
+    "underReview": "Submitted / Under Review",
+    "firstAuthor": "First Author",
+    "allFilter": "All",
+    "bibtex": "BibTeX"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Thoughts on research, life, and everything in between.",
+    "readMore": "Read more",
+    "minRead": "min read",
+    "noPostsYet": "Posts coming soon..."
+  },
+  "about": {
+    "title": "About",
+    "storyTitle": "My Story",
+    "story1": "I\u2019m Tiancheng LIU, a Ph.D. candidate in Computational Media and Arts at HKUST (Guangzhou), and currently a visiting researcher at the University of Amsterdam\u2019s MultiX Lab.",
+    "story2": "My research journey started from a rather different place \u2014 I studied Network Engineering and Finance at South China University of Technology, then spent two years at Waseda University in Tokyo working on blockchain and cloud computing. After joining China Telecom Research Institution as an engineer, I realized my true passion lay at the intersection of technology and culture.",
+    "story3": "Now I work on computational interpretation of Chinese calligraphy, human-AI co-creative systems, and culturally-grounded generative AI. I\u2019m fascinated by how machines can understand and participate in artistic creation while respecting cultural heritage.",
+    "beyondTitle": "Beyond Research",
+    "beyond": "I founded a 300+ member campus fitness community at HKUST(GZ). I play the bamboo flute, practice calligraphy, and enjoy trekking, triathlon, and urban exploration. I speak Mandarin, English, Cantonese, and Japanese.",
+    "languagesTitle": "Languages",
+    "languages": {
+      "mandarin": "Mandarin",
+      "english": "English",
+      "cantonese": "Cantonese",
+      "japanese": "Japanese (N2)"
+    },
+    "connectTitle": "Get in Touch",
+    "connect": "I\u2019m always open to interesting conversations and collaboration opportunities."
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "description": "Download my full CV for a detailed overview of my academic and professional background.",
+    "download": "Download CV (PDF)",
+    "lastUpdated": "Last updated: April 2026"
+  },
+  "footer": {
+    "copyright": "\u00a9 2026 Tiancheng LIU. Built with Next.js."
+  }
+}
