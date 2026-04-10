@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { artworks } from "@/content/artworks";
+import type { Artwork } from "@/content/artworks";
 
 export default async function ArtworkPage({
   params,
@@ -68,7 +69,7 @@ function ArtworkCard({
   work,
   isZh,
 }: {
-  work: (typeof artworks)[number];
+  work: Artwork;
   isZh: boolean;
 }) {
   const statement = isZh ? work.statementZh : work.statementEn;
@@ -78,7 +79,7 @@ function ArtworkCard({
       {/* Image/video placeholder */}
       <div className="w-full aspect-[16/9] bg-bg-secondary flex items-center justify-center">
         <span className="text-text-tertiary text-base">
-          Exhibition Documentation
+          Documentation
         </span>
       </div>
 
@@ -89,9 +90,6 @@ function ArtworkCard({
             <h3 className="text-[1.25rem] font-semibold text-text-primary">
               {work.title}
             </h3>
-            <p className="text-[13px] text-accent-secondary font-medium mt-0.5">
-              {work.venue}, {work.year}
-            </p>
           </div>
           <span
             className={`shrink-0 text-[13px] px-2.5 py-1 rounded-md border ${
@@ -103,6 +101,23 @@ function ArtworkCard({
             {work.role === "lead" ? "Lead Artist" : "Collaborator"}
           </span>
         </div>
+
+        {/* Exhibition info */}
+        <div className="mb-3 space-y-1">
+          {work.exhibitions.map((ex, i) => (
+            <div key={i} className="flex items-start gap-2">
+              <span className="text-[13px] text-accent mt-0.5">&#9654;</span>
+              <p className="text-[13px] text-text-secondary">{ex}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Paper venue if exists */}
+        {work.paperVenue && (
+          <p className="text-[13px] text-accent-secondary font-medium mb-3">
+            Paper: {work.paperVenue}
+          </p>
+        )}
 
         <p className="text-base text-text-secondary leading-relaxed mb-4">
           {statement}
