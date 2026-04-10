@@ -3,6 +3,7 @@
     "home": "\u9996\u9875",
     "research": "\u7814\u7a76",
     "publications": "\u53d1\u8868",
+    "artwork": "\u4f5c\u54c1",
     "blog": "\u535a\u5ba2",
     "about": "\u5173\u4e8e",
     "cv": "CV"
@@ -41,6 +42,12 @@
     "firstAuthor": "\u7b2c\u4e00\u4f5c\u8005",
     "allFilter": "\u5168\u90e8",
     "bibtex": "BibTeX"
+  },
+  "artwork": {
+    "title": "\u4f5c\u54c1",
+    "subtitle": "\u4e66\u6cd5\u3001\u5177\u8eab\u4ea4\u4e92\u4e0e\u4eba\u673a\u5171\u521b\u4ea4\u6c47\u5904\u7684\u5c55\u89c8\u4f5c\u54c1\u3002",
+    "leadArtist": "\u4e3b\u5bfc\u827a\u672f\u5bb6",
+    "collaborative": "\u5408\u4f5c\u4f5c\u54c1"
   },
   "blog": {
     "title": "\u535a\u5ba2",

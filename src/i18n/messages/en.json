@@ -3,6 +3,7 @@
     "home": "Home",
     "research": "Research",
     "publications": "Publications",
+    "artwork": "Artwork",
     "blog": "Blog",
     "about": "About",
     "cv": "CV"
@@ -41,6 +42,12 @@
     "firstAuthor": "First Author",
     "allFilter": "All",
     "bibtex": "BibTeX"
+  },
+  "artwork": {
+    "title": "Artwork",
+    "subtitle": "Exhibition works at the intersection of calligraphy, embodied interaction, and human-AI co-creation.",
+    "leadArtist": "Lead Artist",
+    "collaborative": "Collaborative Works"
   },
   "blog": {
     "title": "Blog",
