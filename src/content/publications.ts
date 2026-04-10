@@ -7,7 +7,7 @@ export interface Publication {
   doi?: string;
   url?: string;
   isFirstAuthor: boolean;
-  status: "published" | "under-review";
+  status: "published";
   tags: string[];
 }
 
@@ -15,20 +15,31 @@ export const publications: Publication[] = [
   {
     id: 1,
     title:
-      "A deep-learning model for edition identification of premodern chinese rare books",
-    authors: "Y. Wei, Y. Fu, S. Wang, S. Gao, T. Liu, Z. Wang, and X. Tong",
-    venue: "Digital Humanities, no. 03, pp. 1-10",
+      "BruSH\u00da: Cross-modal translation of implicit micro-actions in Chinese calligraphy",
+    authors: "T. Liu et al.",
+    venue: "SIGGRAPH '25 Art Papers",
     year: 2025,
-    isFirstAuthor: false,
+    isFirstAuthor: true,
     status: "published",
-    tags: ["deep-learning", "cultural-heritage"],
+    tags: ["calligraphy", "embodied-interaction"],
   },
   {
     id: 2,
     title:
+      "To Perform/To Live: Decolonizing digital music instruments and feminism through human-AI co-created embodied experiences of everyday objects",
+    authors: "S. Zhang, T. Liu, and M. Fan",
+    venue: "SIGGRAPH '25 Art Papers",
+    year: 2025,
+    isFirstAuthor: false,
+    status: "published",
+    tags: ["co-creation", "embodied-interaction"],
+  },
+  {
+    id: 3,
+    title:
       "Finhertip: Embodied identity and human-AI co-creation in accessible musical performance",
     authors: "S. Zhang, T. Liu, and M. Fan",
-    venue: "SIGGRAPH Asia 2025 Art Papers",
+    venue: "SIGGRAPH Asia '25 Art Papers",
     year: 2025,
     doi: "10.1145/3757369.3767621",
     isFirstAuthor: false,
@@ -36,7 +47,7 @@ export const publications: Publication[] = [
     tags: ["co-creation", "embodied-interaction"],
   },
   {
-    id: 3,
+    id: 4,
     title:
       "Quantifying structural aesthetic features and personality trait preferences in kai shu calligraphy",
     authors: "T. Liu, J. Ye, S. Zhang, K. Zhang, and C. Liang",
@@ -48,7 +59,7 @@ export const publications: Publication[] = [
     tags: ["calligraphy", "computational-aesthetics"],
   },
   {
-    id: 4,
+    id: 5,
     title:
       "Computational interpretation of chinese calligraphy layout via graph-based modeling and language models",
     authors: "T. Liu, S. Yan, S. Zhang, C. Liang, and K. Zhang",
@@ -60,7 +71,18 @@ export const publications: Publication[] = [
     tags: ["calligraphy", "computational-aesthetics"],
   },
   {
-    id: 5,
+    id: 6,
+    title:
+      "A deep-learning model for edition identification of premodern chinese rare books",
+    authors: "Y. Wei, Y. Fu, S. Wang, S. Gao, T. Liu, Z. Wang, and X. Tong",
+    venue: "Digital Humanities, no. 03, pp. 1-10",
+    year: 2025,
+    isFirstAuthor: false,
+    status: "published",
+    tags: ["deep-learning", "cultural-heritage"],
+  },
+  {
+    id: 7,
     title: "Chinese seal carving aesthetic evaluation",
     authors: "T. Liu, L. Li, and M. Yang",
     venue: "VINCI '24",
@@ -71,7 +93,7 @@ export const publications: Publication[] = [
     tags: ["calligraphy", "computational-aesthetics"],
   },
   {
-    id: 6,
+    id: 8,
     title:
       "Poemotion: Can AI utilize chinese calligraphy to express emotion from poems?",
     authors:
@@ -84,7 +106,7 @@ export const publications: Publication[] = [
     tags: ["calligraphy", "co-creation"],
   },
   {
-    id: 7,
+    id: 9,
     title:
       "Archiving body movements: Collective generation of chinese calligraphy",
     authors: "A. L. Zhou, J. Ye, T. Liu, and K. Zhang",
@@ -94,51 +116,5 @@ export const publications: Publication[] = [
     isFirstAuthor: false,
     status: "published",
     tags: ["calligraphy", "embodied-interaction"],
-  },
-  {
-    id: 8,
-    title:
-      "Measuring systemic risk in the chinese financial system based on asymmetric exponential power distribution",
-    authors: "H. Li, T. Luo, L. Li, and T. Liu",
-    venue:
-      "Recent Developments in Data Science and Business Analytics, Springer, pp. 225-232",
-    year: 2018,
-    doi: "10.1007/978-3-319-72745-5_24",
-    isFirstAuthor: false,
-    status: "published",
-    tags: ["other"],
-  },
-  {
-    id: 11,
-    title:
-      "Can machines interpret chinese calligraphy pieces via computational aesthetics?",
-    authors: "T. Liu, S. Yan, S. Zhang, C. Liang, and K. Zhang",
-    venue: "Leonardo",
-    year: 2025,
-    isFirstAuthor: true,
-    status: "under-review",
-    tags: ["calligraphy", "computational-aesthetics"],
-  },
-  {
-    id: 12,
-    title:
-      "Neural and behavioural responses to colour space orientation: Insights into aesthetic perception",
-    authors: "Y. Li, T. Liu, B. Wang, K. Zhang, and L. Yu",
-    venue: "Nature Communications",
-    year: 2025,
-    isFirstAuthor: false,
-    status: "under-review",
-    tags: ["computational-aesthetics"],
-  },
-  {
-    id: 13,
-    title:
-      "Charteditor: A human-AI paired tool for authoring pictorial charts",
-    authors: "S. Yan, T. Liu, W. Yang, N. Tang, and Y. Luo",
-    venue: "IEEE Transactions on Visualization and Computer Graphics",
-    year: 2025,
-    isFirstAuthor: false,
-    status: "under-review",
-    tags: ["visualization", "co-creation"],
   },
 ];

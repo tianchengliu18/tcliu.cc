@@ -22,23 +22,22 @@
   "research": {
     "title": "Research",
     "subtitle": "My work sits at the intersection of multimodal computing, embodied interaction, and generative AI for creative applications.",
-    "calligraphy": {
-      "title": "Computational Calligraphy",
-      "description": "Understanding the structure, aesthetics, and cultural meaning of Chinese calligraphy through computational methods. From quantifying stroke-level features to interpreting full compositions via graph-based modeling and language models."
+    "aesthetics": {
+      "title": "Computational Calligraphy Aesthetics",
+      "description": "How can machines quantify and interpret the aesthetic qualities of Chinese calligraphy? From stroke-level features and personality correlations to full-composition layout analysis and seal carving evaluation."
     },
-    "cocreation": {
-      "title": "Human-AI Co-Creativity",
-      "description": "Designing systems where humans and AI collaborate in creative processes \u2014 from embodied musical performance to poetry-driven calligraphy generation and interactive authoring tools."
+    "embodied": {
+      "title": "Embodied Calligraphy & Reflective Practice",
+      "description": "Exploring the embodied knowledge in calligraphy writing \u2014 micro-actions, body movements, emotional expression \u2014 and how technology can make these implicit processes perceivable for reflection and co-creation."
     },
-    "visualization": {
-      "title": "Visualization & Authoring Tools",
-      "description": "Building human-AI paired tools for visual content creation, including pictorial chart editing and interactive storytelling systems that integrate narrative design with generative techniques."
+    "performance": {
+      "title": "Human-AI Co-Creative Performance",
+      "description": "Designing performance systems where humans and AI collaborate through everyday objects, embodied gestures, and generative techniques in music and art."
     }
   },
   "publications": {
     "title": "Publications",
     "published": "Published",
-    "underReview": "Submitted / Under Review",
     "firstAuthor": "First Author",
     "allFilter": "All",
     "bibtex": "BibTeX"
