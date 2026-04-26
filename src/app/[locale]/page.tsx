@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
@@ -96,10 +97,17 @@ function HomeContent({ locale }: { locale: string }) {
           </div>
         </div>
 
-        {/* Photo placeholder */}
+        {/* Photo */}
         <div className="shrink-0">
-          <div className="w-48 h-56 md:w-56 md:h-64 rounded-lg bg-bg-secondary border border-border-light flex items-center justify-center">
-            <span className="text-text-tertiary text-base">Photo</span>
+          <div className="relative w-48 h-56 md:w-56 md:h-64 rounded-lg overflow-hidden border border-border-light bg-bg-secondary">
+            <Image
+              src="/images/photo.PNG"
+              alt={isZh ? "刘天成" : "Tiancheng LIU"}
+              fill
+              sizes="(min-width: 768px) 224px, 192px"
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </div>
