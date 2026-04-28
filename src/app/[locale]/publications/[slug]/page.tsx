@@ -137,15 +137,16 @@ export default async function PublicationDetailPage({ params }: PageProps) {
         )}
       </div>
 
-      {/* Teaser */}
+      {/* Teaser — show the full image without cropping */}
       {pub.teaser && (
-        <div className="relative w-full aspect-[16/9] rounded-lg overflow-hidden border border-border-light bg-bg-secondary mb-10">
+        <div className="relative w-full rounded-lg overflow-hidden border border-border-light bg-bg-secondary mb-10 flex items-center justify-center">
           <Image
             src={pub.teaser}
             alt={pub.title}
-            fill
+            width={1600}
+            height={1200}
             sizes="(min-width: 768px) 768px, 100vw"
-            className="object-cover"
+            className="w-full h-auto max-h-[70vh] object-contain"
           />
         </div>
       )}
