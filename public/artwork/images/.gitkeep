@@ -1,0 +1,6 @@
+Place artwork images here. File naming: <artwork-id>.jpg (or .png/.webp).
+Reference from src/content/artworks.ts as image: "/artwork/images/<id>.jpg".
+
+Current artwork ids:
+  brushu, poemotion, narrastone,
+  to-perform-to-live, finhertip, body-movements

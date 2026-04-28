@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { artworks } from "@/content/artworks";
@@ -76,11 +77,19 @@ function ArtworkCard({
 
   return (
     <div className="border border-border-light rounded-lg overflow-hidden bg-bg-card hover:shadow-md transition-shadow">
-      {/* Image/video placeholder */}
-      <div className="w-full aspect-[16/9] bg-bg-secondary flex items-center justify-center">
-        <span className="text-text-tertiary text-base">
-          Documentation
-        </span>
+      {/* Image / documentation */}
+      <div className="relative w-full aspect-[16/9] bg-bg-secondary flex items-center justify-center overflow-hidden">
+        {work.image ? (
+          <Image
+            src={work.image}
+            alt={work.title}
+            fill
+            sizes="(min-width: 768px) 768px, 100vw"
+            className="object-cover"
+          />
+        ) : (
+          <span className="text-text-tertiary text-base">Documentation</span>
+        )}
       </div>
 
       {/* Content */}

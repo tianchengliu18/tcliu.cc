@@ -1,0 +1,2 @@
+Place artwork videos here (optional). Format: .mp4 recommended.
+Reference from src/content/artworks.ts as video: "/artwork/videos/<id>.mp4".
