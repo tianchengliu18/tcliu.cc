@@ -5,7 +5,16 @@ import { useState } from "react";
 import { publications } from "@/content/publications";
 import PublicationItem from "@/components/PublicationItem";
 
-const allTags = ["All", "calligraphy", "computational-aesthetics", "co-creation", "embodied-interaction", "cultural-heritage"];
+const allTags = [
+  "All",
+  "calligraphy",
+  "computational-aesthetics",
+  "co-creation",
+  "embodied-interaction",
+  "cultural-heritage",
+  "deep-learning",
+  "financial-risk",
+];
 
 export default function PublicationsPage() {
   const t = useTranslations("publications");

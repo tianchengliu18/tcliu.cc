@@ -218,6 +218,42 @@ export const publications: Publication[] = [
     teaser: "/publications/teasers/archiving-body-movements.jpg",
     pdfUrl: "/publications/pdfs/archiving-body-movements.pdf",
   },
+  {
+    id: 10,
+    slug: "icdsba-financial-risk",
+    title:
+      "Measuring Systemic Risk in the Chinese Financial System Based on Asymmetric Exponential Power Distribution",
+    authorList: [
+      { name: "H. Li" },
+      { name: "T. Luo" },
+      { name: "L. Li" },
+      { name: "T. Liu", isMe: true },
+    ],
+    venue:
+      "Recent Developments in Data Science and Business Analytics (Springer Proceedings in Business and Economics), pp. 225-232",
+    venueShort: "ICDSBA 18",
+    year: 2018,
+    doi: "10.1007/978-3-319-72745-5_24",
+    isFirstAuthor: false,
+    status: "published",
+    tags: ["financial-risk"],
+    teaser: "/publications/teasers/icdsba-financial-risk.png",
+    pdfUrl: "/publications/pdfs/icdsba-financial-risk.pdf",
+    abstract:
+      "We propose an extension of CoVaR approach by employing the Asymmetric Exponential Power Distribution (AEPD) to capture the properties of financial data series such as fat-tailedness and skewness. We prove the new model with AEPD has better goodness-of-fit than traditional model with Gaussian distribution, which means a higher precision. Basing on the Chinese stock market data and the new model, we measure the contribution of 29 financial institutions in bank, security, insurance and other industries.",
+    bibtex: `@InProceedings{Li2018SystemicRisk,
+  author    = {Li, Helong and Luo, Tianqi and Li, Liuling and Liu, Tiancheng},
+  editor    = {Tavana, Madjid and Patnaik, Srikanta},
+  title     = {Measuring Systemic Risk in the Chinese Financial System Based on Asymmetric Exponential Power Distribution},
+  booktitle = {Recent Developments in Data Science and Business Analytics},
+  year      = {2018},
+  publisher = {Springer International Publishing},
+  address   = {Cham},
+  pages     = {225--232},
+  isbn      = {978-3-319-72745-5},
+  doi       = {10.1007/978-3-319-72745-5_24}
+}`,
+  },
 ];
 
 export function getPublicationBySlug(slug: string): Publication | undefined {
