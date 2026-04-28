@@ -23,11 +23,11 @@ export default async function ResearchPage({
       <section className="mb-16 max-w-2xl">
         {isZh ? (
           <p className="text-base text-text-secondary leading-relaxed">
-            我研究机器如何参与有文化根基的创作实践。博士阶段以中国书法为主要对象。我提三个问题。机器能否量化作品的视觉特征？机器能否感知创作时身体的细微动作？机器能否成为创作的伙伴？有些项目我主导。有些来自合作，跨越音乐、无障碍设计与文化遗产。
+            我的研究探索机器如何参与有深厚文化根基的创作实践。博士阶段，我的主要研究对象是中国书法。我从三个层次接近它。第一层关注作品的表面。在这一层，我研究基于领域知识的视觉表征与量化指标，使方法保持可解释。第二层聚焦作品背后的过程，即书写过程中塑造作品的动作与姿态。第三层转向实践本身，追问机器能否、以及以何种方式作为合作者参与其中。有些项目由我独立主导；另一些与音乐、无障碍设计和文化遗产领域的研究者合作完成。
           </p>
         ) : (
           <p className="text-base text-text-secondary leading-relaxed">
-            I study how machines can take part in creative practice with cultural roots. My PhD uses Chinese calligraphy as its main subject. I ask three questions. Can a machine quantify the visual features of a work? Can it sense the small moves a body makes while writing? Can it join the work as a partner? Some projects I lead. Others I share with collaborators in music, accessibility, and cultural heritage.
+            My research explores how machines can participate in creative practices with deep cultural roots. During my PhD, the primary subject of my research is Chinese calligraphy. I approach it on three layers. The first layer concerns the surface of a finished work. Here, I study visual representations and quantitative measures grounded in domain knowledge so that the methods remain explainable. The second layer focuses on the process behind the work, the actions and gestures that shape it during the writing. The third layer turns to the practice itself, asking whether and how a machine can participate as a collaborator. Some of these projects I lead independently; on others, I collaborate with researchers in music, accessibility, and cultural heritage.
           </p>
         )}
       </section>
