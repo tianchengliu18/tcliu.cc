@@ -41,8 +41,8 @@ export default async function ResearchPage({
         }
         body={
           isZh
-            ? "书法承载视觉结构。笔画、章法、留白、平衡。这些特征可以被测量。我构建管线，提取这些特征，并将其与人对作品的反应关联。目标不是判断哪件作品更美。目标是让作品的结构对计算可读，并验证哪些结构维度真正影响人的感知。"
-            : "A work holds visual structure. Strokes, layout, white space, balance. These features can be measured. I build pipelines that extract them and link them to the way people read the work. The goal is not to decide what is beautiful. The goal is to make the structure of a work legible to computation, and to test which parts of that structure track human response."
+            ? "一件书法作品承载视觉结构。笔画、章法、留白、平衡。结构很丰富，却难以测量。我研究机器如何量化这些结构，并将测量结果与人对作品的反应建立联系。一种方法是提取笔画和章法特征，通过回归与归因方法将其与观看者的人格特质关联。另一种方法是在作品上构建图结构，引导语言模型把空间结构转化为可读的评注。第三种方法把同样的逻辑用在篆刻上，通过统计与模型指标评价其美学特征。"
+            : "A calligraphy work carries visual structure. Strokes, layout, white space, balance. The structure is rich, yet hard to measure. I study how a machine can quantify it and connect the measurements to the way people respond to the work. One approach extracts stroke and layout features and links them to viewer personality through regression and attribution. Another approach builds a graph over the composition and prompts a language model to render the spatial structure as commentary. A third approach measures structural and statistical features of seal carving to evaluate its aesthetic qualities."
         }
         slugs={["kai-shu-aesthetics", "calligraphy-layout-llm", "seal-carving"]}
         isZh={isZh}
@@ -57,8 +57,8 @@ export default async function ResearchPage({
         }
         body={
           isZh
-            ? "塑造一根线条的大部分东西从未抵达成品。笔的轻重、起笔前的停顿、手腕的转折。我构建工具，让这些动作可见，并将其反馈给书写者。工具不教学。工具不评分。它只让书写者看见原本就存在的东西。"
-            : "Most of what shapes a calligraphic line never reaches the finished page. The press of the brush. The pause before a stroke. The shift in the wrist. I build tools that notice these moves and reflect them back. The tools do not teach. They do not grade. They show the practitioner what was there."
+            ? "一件书法作品只是结果。塑造它的身体动作从未出现在纸面上。笔的按压。起笔前的停顿。手腕的转折。我研究机器如何感知这些动作，让它们可见。一种方法是把动作转化为跨模态信号反馈给书写者，让书写者反思自己的过程。另一种方法是把多个身体的动作收集起来，生成共享的书法档案。"
+            : "A calligraphy work is only an end product. The body actions that shaped it never reach the page. The press of the brush. The pause before a stroke. The tilt of the wrist. I study how a machine can sense these actions and bring them into view. One approach is a perceptual lens that returns the actions to the writer as cross-modal cues. Another approach is an interactive system that gathers actions across many bodies and writes them into a shared archive."
         }
         slugs={["brushu", "archiving-body-movements"]}
         isZh={isZh}
@@ -73,8 +73,8 @@ export default async function ResearchPage({
         }
         body={
           isZh
-            ? "创作实践承载身份。它承载性别、能力、文化记忆、个人历史。AI 可以扁平化这些东西，也可以尊重它们。我与音乐、表演、无障碍领域的合作者一起，设计让机器站在创作者旁边的系统。创作者仍是作者。"
-            : "A creative practice carries identity. It carries gender, ability, cultural memory, and personal history. AI can flatten these things or honor them. I work with collaborators in music, performance, and accessibility to design systems where the machine takes a position alongside the maker. The maker stays the author."
+            ? "一项创作实践承载身份。它承载性别、能力、文化记忆、个人历史。机器可以扁平化这些东西，也可以与它们并立。我研究机器如何作为伙伴而非工具加入这样的实践，以及什么样的设计能让创作者保持作者地位。一种方法是分析中国古诗中的情感，并生成与之呼应的书法笔画。另一种方法是把中国女性的日常物件改造为数字乐器，再通过人机共创把每次演出延伸为 3D 打印的触感作品。第三种方法是与一位盲人酷儿音乐家共同设计触觉串珠界面，把触觉手势映射为多层声音。"
+            : "A creative practice carries identity. It carries gender, ability, cultural memory, and personal history. A machine can flatten these things or it can stand alongside them. I study how a machine can join such a practice as a partner rather than a tool, and what design choices keep the maker as the author. One approach analyzes emotion in classical Chinese poetry and generates expressive calligraphic strokes that respond to it. Another approach repurposes the everyday objects of Chinese women as digital musical instruments, then extends each performance into a 3D-printed tactile artifact through human-machine co-creation. A third approach co-designs a tangible beadwork interface with a blind, queer musician and maps tactile gestures to layered sound."
         }
         slugs={["poemotion", "to-perform-to-live", "finhertip"]}
         isZh={isZh}
