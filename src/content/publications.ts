@@ -119,7 +119,7 @@ export const publications: Publication[] = [
       { name: "K. Zhang" },
     ],
     venue: "POLYU COMP - HKUST(GZ) INFH Research Student Conference, Poster",
-    venueShort: "INFH 25",
+    venueShort: "Poster 25",
     year: 2025,
     isFirstAuthor: true,
     status: "published",
