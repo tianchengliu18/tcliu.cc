@@ -78,19 +78,22 @@ function ArtworkCard({
   return (
     <div className="border border-border-light rounded-lg overflow-hidden bg-bg-card hover:shadow-md transition-shadow">
       {/* Image / documentation */}
-      <div className="relative w-full aspect-[16/9] bg-bg-secondary flex items-center justify-center overflow-hidden">
-        {work.image ? (
+      {work.image ? (
+        <div className="w-full bg-bg-secondary">
           <Image
             src={work.image}
             alt={work.title}
-            fill
+            width={1600}
+            height={1200}
             sizes="(min-width: 768px) 768px, 100vw"
-            className="object-cover"
+            className="w-full h-auto"
           />
-        ) : (
+        </div>
+      ) : (
+        <div className="w-full aspect-[16/9] bg-bg-secondary flex items-center justify-center">
           <span className="text-text-tertiary text-base">Documentation</span>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Content */}
       <div className="p-6">
