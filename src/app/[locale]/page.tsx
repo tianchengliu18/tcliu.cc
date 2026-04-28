@@ -8,6 +8,7 @@ import {
   newsTypeLabel,
   type NewsItem,
 } from "@/content/news";
+import EmailButton from "@/components/EmailButton";
 
 export default async function HomePage({
   params,
@@ -78,18 +79,8 @@ function HomeContent({ locale }: { locale: string }) {
 
           {/* Social links */}
           <div className="flex flex-wrap gap-3 pt-2">
-            <a
-              href="mailto:tcliu767@connect.hkust-gz.edu.cn"
-              className="text-base px-3 py-1.5 border border-border rounded-md text-text-secondary hover:text-accent hover:border-accent transition-colors"
-            >
-              Email
-            </a>
-            <a
-              href="mailto:tianchengliu0108@gmail.com"
-              className="text-base px-3 py-1.5 border border-border rounded-md text-text-secondary hover:text-accent hover:border-accent transition-colors"
-            >
-              Gmail
-            </a>
+            <EmailButton label="Email" email="tcliu767@connect.hkust-gz.edu.cn" />
+            <EmailButton label="Gmail" email="tianchengliu0108@gmail.com" />
             <a
               href="https://scholar.google.com/citations?hl=en&user=lE2gOJsAAAAJ"
               target="_blank"
