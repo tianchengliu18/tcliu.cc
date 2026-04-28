@@ -85,6 +85,8 @@ export const publications: Publication[] = [
     isFirstAuthor: false,
     status: "published",
     tags: ["co-creation", "embodied-interaction"],
+    teaser: "/publications/teasers/finhertip.png",
+    pdfUrl: "/publications/pdfs/finhertip.pdf",
   },
   {
     id: 4,
@@ -105,6 +107,8 @@ export const publications: Publication[] = [
     isFirstAuthor: true,
     status: "published",
     tags: ["calligraphy", "computational-aesthetics"],
+    teaser: "/publications/teasers/kai-shu-aesthetics.png",
+    pdfUrl: "/publications/pdfs/kai-shu-aesthetics.pdf",
   },
   {
     id: 5,
@@ -124,6 +128,8 @@ export const publications: Publication[] = [
     isFirstAuthor: true,
     status: "published",
     tags: ["calligraphy", "computational-aesthetics"],
+    teaser: "/publications/teasers/calligraphy-layout-llm.png",
+    pdfUrl: "/publications/pdfs/calligraphy-layout-llm.pdf",
   },
   {
     id: 6,
@@ -145,6 +151,8 @@ export const publications: Publication[] = [
     isFirstAuthor: false,
     status: "published",
     tags: ["deep-learning", "cultural-heritage"],
+    teaser: "/publications/teasers/rare-books-edition.png",
+    pdfUrl: "/publications/pdfs/rare-books-edition.pdf",
   },
   {
     id: 7,
@@ -162,6 +170,8 @@ export const publications: Publication[] = [
     isFirstAuthor: true,
     status: "published",
     tags: ["calligraphy", "computational-aesthetics"],
+    teaser: "/publications/teasers/seal-carving.jpg",
+    pdfUrl: "/publications/pdfs/seal-carving.pdf",
   },
   {
     id: 8,
@@ -184,6 +194,8 @@ export const publications: Publication[] = [
     isFirstAuthor: true,
     status: "published",
     tags: ["calligraphy", "co-creation"],
+    teaser: "/publications/teasers/poemotion.png",
+    pdfUrl: "/publications/pdfs/poemotion.pdf",
   },
   {
     id: 9,
@@ -203,6 +215,8 @@ export const publications: Publication[] = [
     isFirstAuthor: false,
     status: "published",
     tags: ["calligraphy", "embodied-interaction"],
+    teaser: "/publications/teasers/archiving-body-movements.jpg",
+    pdfUrl: "/publications/pdfs/archiving-body-movements.pdf",
   },
 ];
 
