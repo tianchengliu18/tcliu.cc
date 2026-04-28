@@ -50,6 +50,7 @@ export const publications: Publication[] = [
     isFirstAuthor: true,
     status: "published",
     tags: ["calligraphy", "embodied-interaction"],
+    teaser: "/publications/teasers/brushu.png",
   },
   {
     id: 2,
@@ -67,6 +68,7 @@ export const publications: Publication[] = [
     isFirstAuthor: false,
     status: "published",
     tags: ["co-creation", "embodied-interaction"],
+    teaser: "/publications/teasers/to-perform-to-live.jpg",
   },
   {
     id: 3,
