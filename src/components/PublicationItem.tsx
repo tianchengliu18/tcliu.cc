@@ -78,9 +78,11 @@ export default function PublicationItem({ pub }: Props) {
             </Link>
           </h3>
 
-          <p className="text-[13px] text-text-secondary leading-relaxed mb-1">
-            <AuthorList authors={pub.authorList} />
-          </p>
+          {pub.authorList.length > 0 && (
+            <p className="text-[13px] text-text-secondary leading-relaxed mb-1">
+              <AuthorList authors={pub.authorList} />
+            </p>
+          )}
 
           <p className="text-[13px] text-text-tertiary italic mb-3">
             {pub.venue}, {pub.year}

@@ -54,9 +54,11 @@ export default async function PublicationDetailPage({ params }: PageProps) {
       </h1>
 
       {/* Authors */}
-      <p className="text-base text-text-secondary leading-relaxed mb-2">
-        <AuthorList authors={pub.authorList} showAffiliations />
-      </p>
+      {pub.authorList.length > 0 && (
+        <p className="text-base text-text-secondary leading-relaxed mb-2">
+          <AuthorList authors={pub.authorList} showAffiliations />
+        </p>
+      )}
 
       {/* Affiliations list */}
       {pub.affiliations && pub.affiliations.length > 0 && (

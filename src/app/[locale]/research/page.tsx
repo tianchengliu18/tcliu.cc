@@ -23,11 +23,11 @@ export default async function ResearchPage({
       <section className="mb-16 max-w-2xl">
         {isZh ? (
           <p className="text-base text-text-secondary leading-relaxed">
-            我研究生成式 AI 如何参与有文化根基的创作实践。博士阶段以中国书法为主要对象。我提三个问题。机器能否量化作品的视觉特征？机器能否感知创作时身体的细微动作？机器能否成为创作的伙伴？有些项目我主导。有些来自合作，跨越音乐、无障碍设计与文化遗产。
+            我研究机器如何参与有文化根基的创作实践。博士阶段以中国书法为主要对象。我提三个问题。机器能否量化作品的视觉特征？机器能否感知创作时身体的细微动作？机器能否成为创作的伙伴？有些项目我主导。有些来自合作，跨越音乐、无障碍设计与文化遗产。
           </p>
         ) : (
           <p className="text-base text-text-secondary leading-relaxed">
-            I study how generative AI can take part in creative practice with cultural roots. My PhD uses Chinese calligraphy as its main subject. I ask three questions. Can a machine quantify the visual features of a work? Can it sense the small moves a body makes while writing? Can it join the work as a partner? Some projects I lead. Others I share with collaborators in music, accessibility, and cultural heritage.
+            I study how machines can take part in creative practice with cultural roots. My PhD uses Chinese calligraphy as its main subject. I ask three questions. Can a machine quantify the visual features of a work? Can it sense the small moves a body makes while writing? Can it join the work as a partner? Some projects I lead. Others I share with collaborators in music, accessibility, and cultural heritage.
           </p>
         )}
       </section>
