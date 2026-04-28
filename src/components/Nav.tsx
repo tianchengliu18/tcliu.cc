@@ -37,9 +37,17 @@ export default function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          className="text-[1.25rem] font-semibold tracking-tight text-text-primary hover:text-accent transition-colors"
+          className="flex items-center gap-2 text-[1.25rem] font-semibold tracking-tight text-text-primary hover:text-accent transition-colors"
           style={{ fontFamily: "'Cormorant Garamond', serif" }}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/icon.svg"
+            alt=""
+            width={24}
+            height={24}
+            className="w-6 h-6 rounded-sm"
+          />
           T. LIU
         </Link>
 
