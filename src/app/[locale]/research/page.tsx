@@ -92,17 +92,6 @@ export default async function ResearchPage({
         isZh={isZh}
       />
 
-      {/* Earlier */}
-      <Theme
-        title={isZh ? "早期工作" : "Earlier Work"}
-        body={
-          isZh
-            ? "博士之前，我学的是金融与工程。我的第一篇论文用非对称指数幂分布建模中国金融体系的系统性风险。那是另一个学生的工作。把它留在这里，是因为路径本身有意义。"
-            : "Before my PhD I trained in finance and engineering. My first paper modeled systemic risk in the Chinese financial system. It is the work of a different student. I leave it on the page because the path matters."
-        }
-        slugs={["icdsba-financial-risk"]}
-        isZh={isZh}
-      />
     </div>
   );
 }
