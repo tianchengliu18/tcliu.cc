@@ -1,5 +1,9 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+import MaintenancePage from "@/components/MaintenancePage";
+
+// Flip to false to restore the full CV page.
+const MAINTENANCE = true;
 
 export default async function CVPage({
   params,
@@ -9,6 +13,9 @@ export default async function CVPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  if (MAINTENANCE) {
+    return <MaintenancePage titleEn="CV" titleZh="简历" isZh={locale === "zh"} />;
+  }
   return <CVContent />;
 }
 

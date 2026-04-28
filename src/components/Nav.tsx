@@ -8,12 +8,14 @@ import { useRouter } from "@/i18n/navigation";
 import { useState } from "react";
 
 const navItems = [
-  { key: "research", href: "/research" },
-  { key: "publications", href: "/publications" },
-  { key: "artwork", href: "/artwork" },
-  { key: "news", href: "/news" },
-  { key: "about", href: "/about" },
-  { key: "cv", href: "/cv" },
+  { key: "research", href: "/research", disabled: false },
+  { key: "publications", href: "/publications", disabled: false },
+  { key: "artwork", href: "/artwork", disabled: false },
+  { key: "news", href: "/news", disabled: false },
+  // About and CV are under maintenance: shown in the nav with a strikethrough,
+  // and the pages themselves render a maintenance notice.
+  { key: "about", href: "/about", disabled: true },
+  { key: "cv", href: "/cv", disabled: true },
 ] as const;
 
 export default function Nav() {
@@ -55,15 +57,19 @@ export default function Nav() {
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => {
             const isActive = pathname === item.href || pathname.startsWith(item.href + "/");
+            const className = item.disabled
+              ? "text-base line-through decoration-1 text-text-tertiary hover:text-text-secondary transition-colors"
+              : `text-base transition-colors ${
+                  isActive
+                    ? "text-accent font-medium"
+                    : "text-text-secondary hover:text-text-primary"
+                }`;
             return (
               <Link
                 key={item.key}
                 href={item.href}
-                className={`text-base transition-colors ${
-                  isActive
-                    ? "text-accent font-medium"
-                    : "text-text-secondary hover:text-text-primary"
-                }`}
+                title={item.disabled ? "Under maintenance" : undefined}
+                className={className}
               >
                 {t(item.key)}
               </Link>
@@ -158,16 +164,17 @@ export default function Nav() {
           <div className="px-6 py-4 space-y-3">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
+              const className = item.disabled
+                ? "block text-base line-through decoration-1 text-text-tertiary"
+                : `block text-base ${
+                    isActive ? "text-accent font-medium" : "text-text-secondary"
+                  }`;
               return (
                 <Link
                   key={item.key}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`block text-base ${
-                    isActive
-                      ? "text-accent font-medium"
-                      : "text-text-secondary"
-                  }`}
+                  className={className}
                 >
                   {t(item.key)}
                 </Link>

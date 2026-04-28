@@ -1,5 +1,9 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+import MaintenancePage from "@/components/MaintenancePage";
+
+// Flip to false to restore the full About page.
+const MAINTENANCE = true;
 
 export default async function AboutPage({
   params,
@@ -9,6 +13,9 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  if (MAINTENANCE) {
+    return <MaintenancePage titleEn="About" titleZh="关于" isZh={locale === "zh"} />;
+  }
   return <AboutContent />;
 }
 
