@@ -1,23 +1,51 @@
+export interface Author {
+  name: string;
+  /** Mark this author as the site owner — rendered with bold + underline. */
+  isMe?: boolean;
+  /** 1-based indices into the surrounding `affiliations` array. */
+  affiliations?: number[];
+}
+
 export interface Publication {
   id: number;
+  /** URL-safe identifier; used for the detail page route. */
+  slug: string;
   title: string;
-  authors: string;
+  /** Structured author list. Names matching the site owner should set `isMe: true`. */
+  authorList: Author[];
+  /** Optional list of affiliations referenced by `Author.affiliations` (1-based). */
+  affiliations?: string[];
+  /** Full venue string for the list (e.g. "ACM Multimedia 2025 (MM '25), pp. 6730-6739"). */
   venue: string;
+  /** Short venue badge shown in the top-left of the teaser (e.g. "ACM MM 25"). */
+  venueShort: string;
   year: number;
-  doi?: string;
-  url?: string;
   isFirstAuthor: boolean;
   status: "published";
   tags: string[];
+  /** Path under /public, e.g. "/publications/teasers/brushu.jpg". */
+  teaser?: string;
+  /** Abstract shown on the detail page. */
+  abstract?: string;
+  /** Self-hosted PDF, e.g. "/publications/pdfs/brushu.pdf". */
+  pdfUrl?: string;
+  doi?: string;
+  arxivUrl?: string;
+  codeUrl?: string;
+  projectUrl?: string;
+  /** BibTeX entry shown on the detail page (kept as a raw string). */
+  bibtex?: string;
 }
 
 export const publications: Publication[] = [
   {
     id: 1,
+    slug: "brushu",
     title:
-      "BruSH\u00da: Cross-modal translation of implicit micro-actions in Chinese calligraphy",
-    authors: "T. Liu et al.",
+      "BruSHÚ: Cross-modal translation of implicit micro-actions in Chinese calligraphy",
+    authorList: [{ name: "T. Liu", isMe: true }, { name: "et al." }],
     venue: "SIGGRAPH '25 Art Papers",
+    venueShort: "SIGGRAPH 25",
     year: 2025,
     isFirstAuthor: true,
     status: "published",
@@ -25,10 +53,16 @@ export const publications: Publication[] = [
   },
   {
     id: 2,
+    slug: "to-perform-to-live",
     title:
       "To Perform/To Live: Decolonizing digital music instruments and feminism through human-AI co-created embodied experiences of everyday objects",
-    authors: "S. Zhang, T. Liu, and M. Fan",
+    authorList: [
+      { name: "S. Zhang" },
+      { name: "T. Liu", isMe: true },
+      { name: "M. Fan" },
+    ],
     venue: "SIGGRAPH '25 Art Papers",
+    venueShort: "SIGGRAPH 25",
     year: 2025,
     isFirstAuthor: false,
     status: "published",
@@ -36,10 +70,16 @@ export const publications: Publication[] = [
   },
   {
     id: 3,
+    slug: "finhertip",
     title:
       "Finhertip: Embodied identity and human-AI co-creation in accessible musical performance",
-    authors: "S. Zhang, T. Liu, and M. Fan",
+    authorList: [
+      { name: "S. Zhang" },
+      { name: "T. Liu", isMe: true },
+      { name: "M. Fan" },
+    ],
     venue: "SIGGRAPH Asia '25 Art Papers",
+    venueShort: "SIGGRAPH Asia 25",
     year: 2025,
     doi: "10.1145/3757369.3767621",
     isFirstAuthor: false,
@@ -48,10 +88,18 @@ export const publications: Publication[] = [
   },
   {
     id: 4,
+    slug: "kai-shu-aesthetics",
     title:
       "Quantifying structural aesthetic features and personality trait preferences in kai shu calligraphy",
-    authors: "T. Liu, J. Ye, S. Zhang, K. Zhang, and C. Liang",
+    authorList: [
+      { name: "T. Liu", isMe: true },
+      { name: "J. Ye" },
+      { name: "S. Zhang" },
+      { name: "K. Zhang" },
+      { name: "C. Liang" },
+    ],
     venue: "ACM Multimedia 2025 (MM '25), pp. 6730-6739",
+    venueShort: "ACM MM 25",
     year: 2025,
     doi: "10.1145/3746027.3754816",
     isFirstAuthor: true,
@@ -60,11 +108,18 @@ export const publications: Publication[] = [
   },
   {
     id: 5,
+    slug: "calligraphy-layout-llm",
     title:
       "Computational interpretation of chinese calligraphy layout via graph-based modeling and language models",
-    authors: "T. Liu, S. Yan, S. Zhang, C. Liang, and K. Zhang",
-    venue:
-      "POLYU COMP - HKUST(GZ) INFH Research Student Conference, Poster",
+    authorList: [
+      { name: "T. Liu", isMe: true },
+      { name: "S. Yan" },
+      { name: "S. Zhang" },
+      { name: "C. Liang" },
+      { name: "K. Zhang" },
+    ],
+    venue: "POLYU COMP - HKUST(GZ) INFH Research Student Conference, Poster",
+    venueShort: "INFH 25",
     year: 2025,
     isFirstAuthor: true,
     status: "published",
@@ -72,10 +127,20 @@ export const publications: Publication[] = [
   },
   {
     id: 6,
+    slug: "rare-books-edition",
     title:
       "A deep-learning model for edition identification of premodern chinese rare books",
-    authors: "Y. Wei, Y. Fu, S. Wang, S. Gao, T. Liu, Z. Wang, and X. Tong",
+    authorList: [
+      { name: "Y. Wei" },
+      { name: "Y. Fu" },
+      { name: "S. Wang" },
+      { name: "S. Gao" },
+      { name: "T. Liu", isMe: true },
+      { name: "Z. Wang" },
+      { name: "X. Tong" },
+    ],
     venue: "Digital Humanities, no. 03, pp. 1-10",
+    venueShort: "DH 25",
     year: 2025,
     isFirstAuthor: false,
     status: "published",
@@ -83,9 +148,15 @@ export const publications: Publication[] = [
   },
   {
     id: 7,
+    slug: "seal-carving",
     title: "Chinese seal carving aesthetic evaluation",
-    authors: "T. Liu, L. Li, and M. Yang",
+    authorList: [
+      { name: "T. Liu", isMe: true },
+      { name: "L. Li" },
+      { name: "M. Yang" },
+    ],
     venue: "VINCI '24",
+    venueShort: "VINCI 24",
     year: 2024,
     doi: "10.1145/3678698.3687175",
     isFirstAuthor: true,
@@ -94,11 +165,20 @@ export const publications: Publication[] = [
   },
   {
     id: 8,
+    slug: "poemotion",
     title:
       "Poemotion: Can AI utilize chinese calligraphy to express emotion from poems?",
-    authors:
-      "T. Liu, A. Wang, X. Chen, J. Yan, Y. Li, P. Hui, and K. Zhang",
+    authorList: [
+      { name: "T. Liu", isMe: true },
+      { name: "A. Wang" },
+      { name: "X. Chen" },
+      { name: "J. Yan" },
+      { name: "Y. Li" },
+      { name: "P. Hui" },
+      { name: "K. Zhang" },
+    ],
     venue: "ISEA2024 Everywhen Proceedings, pp. 476-483",
+    venueShort: "ISEA 24",
     year: 2024,
     doi: "10.5204/book.eprints.256296",
     isFirstAuthor: true,
@@ -107,10 +187,17 @@ export const publications: Publication[] = [
   },
   {
     id: 9,
+    slug: "archiving-body-movements",
     title:
       "Archiving body movements: Collective generation of chinese calligraphy",
-    authors: "A. L. Zhou, J. Ye, T. Liu, and K. Zhang",
+    authorList: [
+      { name: "A. L. Zhou" },
+      { name: "J. Ye" },
+      { name: "T. Liu", isMe: true },
+      { name: "K. Zhang" },
+    ],
     venue: "ISEA2024 Everywhen Proceedings, pp. 862-870",
+    venueShort: "ISEA 24",
     year: 2024,
     doi: "10.5204/book.eprints.256296",
     isFirstAuthor: false,
@@ -118,3 +205,7 @@ export const publications: Publication[] = [
     tags: ["calligraphy", "embodied-interaction"],
   },
 ];
+
+export function getPublicationBySlug(slug: string): Publication | undefined {
+  return publications.find((p) => p.slug === slug);
+}

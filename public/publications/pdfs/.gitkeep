@@ -1,0 +1,2 @@
+Place self-hosted PDFs here. File naming: <slug>.pdf (e.g. brushu.pdf).
+Reference the file from src/content/publications.ts as pdfUrl: "/publications/pdfs/<slug>.pdf".

@@ -1,0 +1,3 @@
+Place teaser images here. File naming: <slug>.jpg (or .png/.webp).
+Reference the file from src/content/publications.ts as teaser: "/publications/teasers/<slug>.jpg".
+Recommended size: ~800x600 (4:3) or wider; will be displayed cropped at the list level.
