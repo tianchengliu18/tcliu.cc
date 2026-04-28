@@ -28,7 +28,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://scholar.google.com"
+            href="https://scholar.google.com/citations?hl=en&user=lE2gOJsAAAAJ"
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-tertiary hover:text-text-secondary transition-colors"
@@ -44,7 +44,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://github.com"
+            href="https://github.com/tianchengliu18/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-text-tertiary hover:text-text-secondary transition-colors"

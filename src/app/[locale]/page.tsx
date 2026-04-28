@@ -77,7 +77,7 @@ function HomeContent({ locale }: { locale: string }) {
           </div>
 
           {/* Social links */}
-          <div className="flex gap-3 pt-2">
+          <div className="flex flex-wrap gap-3 pt-2">
             <a
               href="mailto:tcliu767@connect.hkust-gz.edu.cn"
               className="text-base px-3 py-1.5 border border-border rounded-md text-text-secondary hover:text-accent hover:border-accent transition-colors"
@@ -85,7 +85,13 @@ function HomeContent({ locale }: { locale: string }) {
               Email
             </a>
             <a
-              href="https://scholar.google.com"
+              href="mailto:tianchengliu0108@gmail.com"
+              className="text-base px-3 py-1.5 border border-border rounded-md text-text-secondary hover:text-accent hover:border-accent transition-colors"
+            >
+              Gmail
+            </a>
+            <a
+              href="https://scholar.google.com/citations?hl=en&user=lE2gOJsAAAAJ"
               target="_blank"
               rel="noopener noreferrer"
               className="text-base px-3 py-1.5 border border-border rounded-md text-text-secondary hover:text-accent hover:border-accent transition-colors"
@@ -93,7 +99,7 @@ function HomeContent({ locale }: { locale: string }) {
               Google Scholar
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/tianchengliu18/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-base px-3 py-1.5 border border-border rounded-md text-text-secondary hover:text-accent hover:border-accent transition-colors"
