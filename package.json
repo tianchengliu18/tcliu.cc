@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "rsync -a out/en/ out/ && rm -rf out/en",
     "start": "next start",
     "lint": "eslint"
   },
