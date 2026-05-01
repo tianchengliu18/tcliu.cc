@@ -11,12 +11,9 @@
   "home": {
     "greeting": "Hi, I'm",
     "name": "Tiancheng LIU",
-    "tagline": "Creative AI \u00b7 Calligraphy \u00b7 Multimodal Interaction",
-    "bio": "Ph.D. Candidate at HKUST(GZ), Visiting Researcher at University of Amsterdam. I explore computational aesthetics, human-AI co-creativity, and culturally-grounded generative systems.",
-    "currentRole": "Ph.D. Candidate",
-    "currentAffiliation": "HKUST (Guangzhou)",
-    "visitingRole": "Visiting Researcher",
-    "visitingAffiliation": "University of Amsterdam",
+    "tagline": "Computational Arts and Culture \u00b7 Embodied Interaction \u00b7 Creative AI",
+    "roleLine": "Currently Ph.D. Candidate at HKUST(GZ), Visiting Researcher at University of Amsterdam.",
+    "bio": "I study computational approaches to aesthetic analysis in visual and cultural works, the sensing of bodily actions in creative processes, and the design of human-machine co-creative systems. My work takes the form of both published research and exhibited artworks.",
     "latest": "Latest",
     "viewAll": "View all"
   },

@@ -53,29 +53,13 @@ function HomeContent({ locale }: { locale: string }) {
             </p>
           </div>
 
-          <p className="text-base text-text-secondary leading-relaxed">{t("bio")}</p>
+          <p className="text-base text-text-primary font-medium leading-relaxed">
+            {t("roleLine")}
+          </p>
 
-          {/* Affiliations */}
-          <div className="space-y-2">
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              <span className="text-base text-text-primary font-medium">
-                {t("currentRole")}
-              </span>
-              <span className="text-base text-text-secondary">
-                {t("currentAffiliation")}
-              </span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-secondary" />
-              <span className="text-base text-text-primary font-medium">
-                {t("visitingRole")}
-              </span>
-              <span className="text-base text-text-secondary">
-                {t("visitingAffiliation")}
-              </span>
-            </div>
-          </div>
+          <p className="text-base text-text-secondary leading-relaxed">
+            {t("bio")}
+          </p>
 
           {/* Social links */}
           <div className="flex flex-wrap gap-3 pt-2">
