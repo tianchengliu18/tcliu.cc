@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useTheme } from "./ThemeProvider";
 import { useParams } from "next/navigation";
-import { useRouter } from "@/i18n/navigation";
 import { useState } from "react";
 
 const navItems = [
@@ -20,7 +19,6 @@ export default function Nav() {
   const t = useTranslations("nav");
   const pathname = usePathname();
   const params = useParams();
-  const router = useRouter();
   const { theme, toggleTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -28,7 +26,14 @@ export default function Nav() {
   const otherLocale = currentLocale === "en" ? "zh" : "en";
 
   const switchLocale = () => {
-    router.replace(pathname, { locale: otherLocale });
+    // Construct the URL explicitly to match the deployed file layout: the
+    // default locale (en) lives at the root, and other locales sit under a
+    // /<locale>/ prefix. Going through next-intl's router can yield /en/...
+    // URLs that no longer exist after the static export rewrite.
+    const cleanPath = pathname || "/";
+    const target =
+      otherLocale === "en" ? cleanPath : `/${otherLocale}${cleanPath}`;
+    window.location.href = target;
   };
 
   return (
