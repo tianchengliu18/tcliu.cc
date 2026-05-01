@@ -26,13 +26,23 @@ export default function Nav() {
   const otherLocale = currentLocale === "en" ? "zh" : "en";
 
   const switchLocale = () => {
-    // Construct the URL explicitly to match the deployed file layout: the
-    // default locale (en) lives at the root, and other locales sit under a
-    // /<locale>/ prefix. Going through next-intl's router can yield /en/...
-    // URLs that no longer exist after the static export rewrite.
-    const cleanPath = pathname || "/";
-    const target =
-      otherLocale === "en" ? cleanPath : `/${otherLocale}${cleanPath}`;
+    if (typeof window === "undefined") return;
+    // Read the current path straight from the browser. Don't trust
+    // next-intl's usePathname here: with localePrefix "as-needed" plus
+    // a static-export rewrite that moves /en/* to the root, its idea of
+    // the locale prefix can drift from what's actually on disk.
+    const fullPath = window.location.pathname;
+    // Strip a leading /zh segment if present, leaving the bare path.
+    let barePath = fullPath.replace(/^\/zh(?=\/|$)/, "");
+    if (!barePath) barePath = "/";
+    // Default locale (en) is served at the root; non-default gets a prefix.
+    let target: string;
+    if (otherLocale === "en") {
+      target = barePath;
+    } else {
+      target =
+        barePath === "/" ? `/${otherLocale}/` : `/${otherLocale}${barePath}`;
+    }
     window.location.href = target;
   };
 
