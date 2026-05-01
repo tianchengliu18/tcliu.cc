@@ -2,8 +2,11 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import MaintenancePage from "@/components/MaintenancePage";
 
-// Flip to false to restore the full About page.
-const MAINTENANCE = true;
+// Maintenance mode hides the page in production while leaving it visible
+// in `npm run dev`. Flip MAINTENANCE_IN_PROD to false to publish.
+const MAINTENANCE_IN_PROD = false;
+const MAINTENANCE =
+  MAINTENANCE_IN_PROD && process.env.NODE_ENV === "production";
 
 export default async function AboutPage({
   params,
@@ -16,18 +19,22 @@ export default async function AboutPage({
   if (MAINTENANCE) {
     return <MaintenancePage titleEn="About" titleZh="关于" isZh={locale === "zh"} />;
   }
-  return <AboutContent />;
+  return <AboutContent locale={locale} />;
 }
 
-function AboutContent() {
+function AboutContent({ locale }: { locale: string }) {
   const t = useTranslations("about");
+  const isZh = locale === "zh";
 
   const education = [
     { period: "2026", place: "University of Amsterdam", role: "Visiting Researcher" },
     { period: "2022 \u2013 Present", place: "HKUST (Guangzhou)", role: "Ph.D. in CMA" },
     { period: "2018 \u2013 2020", place: "Waseda University", role: "M.Eng" },
-    { period: "2014 \u2013 2018", place: "South China Univ. of Tech.", role: "B.Eng + B.Econ" },
+    { period: "2014 \u2013 2018", place: "South China Univ. of Tech.", role: "B.Econ in Finance" },
   ];
+
+  const linkClass =
+    "text-text-primary underline decoration-1 underline-offset-2 hover:text-accent transition-colors";
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-16">
@@ -43,9 +50,49 @@ function AboutContent() {
               {t("storyTitle")}
             </h2>
             <div className="space-y-4 text-text-secondary leading-relaxed">
-              <p>{t("story1")}</p>
-              <p>{t("story2")}</p>
-              <p>{t("story3")}</p>
+              {isZh ? (
+                <>
+                  <p>
+                    我是刘天成，香港科技大学（广州）计算媒体与艺术在读博士，导师{" "}
+                    <a href="http://www.art4.gift/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      张康
+                    </a>
+                    ，副导师{" "}
+                    <a href="https://cma.hkust-gz.edu.cn/faculty-regular/chen-liang/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      梁宸
+                    </a>
+                    。目前在阿姆斯特丹大学 MultiX 实验室担任访问研究员，与{" "}
+                    <a href="https://nanne.github.io/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      Nanne van Noord
+                    </a>{" "}
+                    合作。
+                  </p>
+                  <p>
+                    我走到这里走了一条长路。本科在华南理工大学学习金融，然后在早稻田大学完成工程硕士。东京那两年的真正意义在别处。大部分周末我泡在东京的现当代美术馆与画廊里，那里看到的作品重塑了我对计算可以做什么的理解。回国开始计算媒体与艺术博士时，我选择中国书法作为研究对象，因为那是我最熟悉、也最希望被机器认真对待的文化实践。
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    I&apos;m Tiancheng LIU, a Ph.D. candidate in Computational Media and Arts at HKUST (Guangzhou), supervised by{" "}
+                    <a href="http://www.art4.gift/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      Kang Zhang
+                    </a>{" "}
+                    and co-supervised by{" "}
+                    <a href="https://cma.hkust-gz.edu.cn/faculty-regular/chen-liang/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      Chen Liang
+                    </a>
+                    . I&apos;m currently a visiting researcher at the University of Amsterdam&apos;s MultiX Lab, working with{" "}
+                    <a href="https://nanne.github.io/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      Nanne van Noord
+                    </a>
+                    .
+                  </p>
+                  <p>
+                    I came here through a long route. Finance at South China University of Technology, then engineering at Waseda University in Tokyo. The Tokyo years mattered for a different reason. I spent most of my free time in the city&apos;s contemporary art museums and galleries, and the work I saw there reshaped what I thought computation could be for. When I returned to start a PhD in Computational Media and Arts, I chose Chinese calligraphy as my subject, because it was the cultural practice I knew best and most wanted machines to take seriously.
+                  </p>
+                </>
+              )}
             </div>
           </section>
 
@@ -54,18 +101,6 @@ function AboutContent() {
               {t("beyondTitle")}
             </h2>
             <p className="text-text-secondary leading-relaxed">{t("beyond")}</p>
-
-            {/* Life photo placeholders */}
-            <div className="grid grid-cols-3 gap-3 mt-6">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="aspect-square rounded-lg bg-bg-secondary border border-border-light flex items-center justify-center"
-                >
-                  <span className="text-text-tertiary text-[13px]">Photo {i}</span>
-                </div>
-              ))}
-            </div>
           </section>
 
           <section>
@@ -86,11 +121,6 @@ function AboutContent() {
 
         {/* Sidebar */}
         <div className="space-y-8">
-          {/* Photo */}
-          <div className="w-full aspect-square rounded-lg bg-bg-secondary border border-border-light flex items-center justify-center">
-            <span className="text-text-tertiary text-base">Photo</span>
-          </div>
-
           {/* Education timeline */}
           <div>
             <h3 className="text-[13px] font-medium text-text-tertiary uppercase tracking-wider mb-4">

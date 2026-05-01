@@ -12,10 +12,8 @@ const navItems = [
   { key: "publications", href: "/publications", disabled: false },
   { key: "artwork", href: "/artwork", disabled: false },
   { key: "news", href: "/news", disabled: false },
-  // About and CV are under maintenance: shown in the nav with a strikethrough,
-  // and the pages themselves render a maintenance notice.
-  { key: "about", href: "/about", disabled: true },
-  { key: "cv", href: "/cv", disabled: true },
+  { key: "about", href: "/about", disabled: false },
+  { key: "cv", href: "/cv", disabled: false },
 ] as const;
 
 export default function Nav() {

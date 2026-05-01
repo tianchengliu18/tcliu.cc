@@ -2,8 +2,11 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import MaintenancePage from "@/components/MaintenancePage";
 
-// Flip to false to restore the full CV page.
-const MAINTENANCE = true;
+// Maintenance mode hides the page in production while leaving it visible
+// in `npm run dev`. Flip MAINTENANCE_IN_PROD to false to publish.
+const MAINTENANCE_IN_PROD = false;
+const MAINTENANCE =
+  MAINTENANCE_IN_PROD && process.env.NODE_ENV === "production";
 
 export default async function CVPage({
   params,
