@@ -48,12 +48,14 @@ function HomeContent({ locale }: { locale: string }) {
                 Tiancheng LIU
               </h1>
             )}
-            <p className="mt-3 text-[1.25rem] text-accent font-medium tracking-wide">
-              {t("tagline")}
-            </p>
+            <ul className="mt-3 space-y-1 text-[1.25rem] text-accent font-medium tracking-wide list-disc list-inside marker:text-accent/60">
+              <li>{isZh ? "计算艺术与文化" : "Computational Arts and Culture"}</li>
+              <li>{isZh ? "具身交互" : "Embodied Interaction"}</li>
+              <li>{isZh ? "创意 AI" : "Creative AI"}</li>
+            </ul>
           </div>
 
-          <p className="text-base text-text-primary font-medium leading-relaxed">
+          <p className="text-base text-text-primary font-medium leading-relaxed text-balance">
             {t("roleLine")}
           </p>
 
