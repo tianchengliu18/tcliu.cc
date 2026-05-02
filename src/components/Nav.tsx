@@ -57,7 +57,11 @@ export default function Nav() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/icon.svg"
+            src={
+              currentLocale === "zh"
+                ? "/favicons/zh/icon-192.png"
+                : "/favicons/en/icon.svg"
+            }
             alt=""
             width={24}
             height={24}
