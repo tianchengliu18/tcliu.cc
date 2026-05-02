@@ -21,8 +21,8 @@ export async function generateMetadata({
   const dir = isZh ? "/favicons/zh" : "/favicons/en";
   return {
     title: isZh
-      ? "刘天成 | 计算艺术与文化"
-      : "Tiancheng LIU | Creative AI & Calligraphy",
+      ? "刘天成 | 个人网站"
+      : "Tiancheng LIU | Personal Website",
     description: isZh
       ? "刘天成的个人网站。研究方向：计算艺术与文化、具身交互、创意 AI。"
       : "Personal website of Tiancheng LIU. Research areas: computational arts and culture, embodied interaction, and creative AI.",
