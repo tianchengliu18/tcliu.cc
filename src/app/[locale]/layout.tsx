@@ -11,11 +11,33 @@ export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata = {
-  title: "Tiancheng LIU | Creative AI & Calligraphy",
-  description:
-    "Personal website of Tiancheng LIU — researcher in Creative AI, computational calligraphy, and multimodal interaction.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const isZh = locale === "zh";
+  const dir = isZh ? "/favicons/zh" : "/favicons/en";
+  return {
+    title: isZh
+      ? "刘天成 | 计算艺术与文化"
+      : "Tiancheng LIU | Creative AI & Calligraphy",
+    description: isZh
+      ? "刘天成的个人网站。研究方向：计算艺术与文化、具身交互、创意 AI。"
+      : "Personal website of Tiancheng LIU. Research areas: computational arts and culture, embodied interaction, and creative AI.",
+    icons: {
+      icon: [
+        { url: `${dir}/favicon.ico`, sizes: "48x48", type: "image/x-icon" },
+        ...(isZh
+          ? [{ url: `${dir}/icon-512.png`, sizes: "512x512", type: "image/png" }]
+          : [{ url: `${dir}/icon.svg`, type: "image/svg+xml" }]),
+        { url: `${dir}/icon-192.png`, sizes: "192x192", type: "image/png" },
+      ],
+      apple: { url: `${dir}/apple-touch-icon.png`, sizes: "180x180" },
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,
