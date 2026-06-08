@@ -30,7 +30,13 @@ function AboutContent({ locale }: { locale: string }) {
     { period: "2026", place: "University of Amsterdam", role: "Visiting Researcher" },
     { period: "2022 \u2013 Present", place: "HKUST (Guangzhou)", role: "Ph.D. in CMA" },
     { period: "2018 \u2013 2020", place: "Waseda University", role: "M.Eng" },
-    { period: "2014 \u2013 2018", place: "South China Univ. of Tech.", role: "B.Econ in Finance" },
+    {
+      period: "2014 \u2013 2018",
+      place: "South China Univ. of Tech.",
+      role: isZh
+        ? "\u5de5\u5b66\u5b66\u58eb\uff08\u7f51\u7edc\u5de5\u7a0b\uff09\u00b7 \u7ecf\u6d4e\u5b66\u5b66\u58eb\uff08\u91d1\u878d\u5b66\uff0c\u53cc\u5b66\u4f4d\uff09"
+        : "B.Eng in Network Engineering \u00b7 B.Econ in Finance (dual degree)",
+    },
   ];
 
   const linkClass =
@@ -68,7 +74,7 @@ function AboutContent({ locale }: { locale: string }) {
                     合作。
                   </p>
                   <p>
-                    我走到这里走了一条长路。本科在华南理工大学学习金融，然后在早稻田大学完成工程硕士。东京那两年的真正意义在别处。大部分周末我泡在东京的现当代美术馆与画廊里，那里看到的作品重塑了我对计算可以做什么的理解。回国开始计算媒体与艺术博士时，我选择中国书法作为研究对象，因为那是我最熟悉、也最希望被机器认真对待的文化实践。
+                    我走到这里走了一条长路。本科在华南理工大学读了网络工程与金融学双学位，然后在早稻田大学完成工程硕士。东京那两年的真正意义在别处。大部分周末我泡在东京的现当代美术馆与画廊里，那里看到的作品重塑了我对计算可以做什么的理解。回国开始计算媒体与艺术博士时，我选择中国书法作为研究对象，因为那是我最熟悉、也最希望被机器认真对待的文化实践。
                   </p>
                 </>
               ) : (
@@ -89,7 +95,7 @@ function AboutContent({ locale }: { locale: string }) {
                     .
                   </p>
                   <p>
-                    I came here through a long route. Finance at South China University of Technology, then engineering at Waseda University in Tokyo. The Tokyo years mattered for a different reason. I spent most of my free time in the city&apos;s contemporary art museums and galleries, and the work I saw there reshaped what I thought computation could be for. When I returned to start a PhD in Computational Media and Arts, I chose Chinese calligraphy as my subject, because it was the cultural practice I knew best and most wanted machines to take seriously.
+                    I came here through a long route. A dual degree in Network Engineering and Finance at South China University of Technology, then engineering at Waseda University in Tokyo. The Tokyo years mattered for a different reason. I spent most of my free time in the city&apos;s contemporary art museums and galleries, and the work I saw there reshaped what I thought computation could be for. When I returned to start a PhD in Computational Media and Arts, I chose Chinese calligraphy as my subject, because it was the cultural practice I knew best and most wanted machines to take seriously.
                   </p>
                 </>
               )}
