@@ -67,6 +67,41 @@ export const publications: Publication[] = [
     teaser: "/publications/teasers/to-perform-to-live.jpg",
   },
   {
+    id: 11,
+    slug: "understanding-art-and-culture",
+    title: "Understanding Art & Culture",
+    authorList: [
+      { name: "P. Riccio" },
+      { name: "S. Khan" },
+      { name: "L. Schaerf" },
+      { name: "S. Wang" },
+      { name: "T. Liu", isMe: true },
+      { name: "A. Efthymiou" },
+      { name: "N. Garcia" },
+      { name: "N. van Noord" },
+    ],
+    venue:
+      "International Conference on Multimedia Retrieval (ICMR '26), Tutorial, Amsterdam, Netherlands, 3 pages",
+    venueShort: "ICMR 26",
+    year: 2026,
+    doi: "10.1145/3805622.3816071",
+    isFirstAuthor: false,
+    status: "published",
+    tags: ["cultural-heritage", "multimodal"],
+    pdfUrl: "/publications/pdfs/understanding-art-and-culture.pdf",
+    abstract:
+      "Art and cultural heritage objects carry visual, textual, relational, and symbolic meaning that cannot be reduced to standard image understanding tasks. This tutorial presents computational methods for studying fine art and cultural artifacts, organized around three themes: relationality, meaning, and recognizability. We cover multimodal and graph-based representation learning for fine art analysis, knowledge-retrieval and agentic reasoning frameworks for artwork interpretation, and instance-level recognition in cultural heritage settings, as well as large-scale museum benchmarks and synthetic data generation strategies. Beyond these technical contributions, the tutorial foregrounds the cultural dimension of multimedia research, inviting discussion on current approaches for studying art and culture and directions for future research.",
+    bibtex: `@inproceedings{Riccio2026UnderstandingArt,
+  author    = {Riccio, Piera and Khan, Selina and Schaerf, Ludovica and Wang, Shuai and Liu, Tiancheng and Efthymiou, Athanasios and Garcia, Noa and van Noord, Nanne},
+  title     = {Understanding Art \& Culture},
+  booktitle = {International Conference on Multimedia Retrieval (ICMR '26)},
+  year      = {2026},
+  publisher = {ACM},
+  address   = {Amsterdam, Netherlands},
+  doi       = {10.1145/3805622.3816071}
+}`,
+  },
+  {
     id: 3,
     slug: "finhertip",
     title:

@@ -37,6 +37,21 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "icmr-2026-tutorial",
+    date: "2026-06-16",
+    precision: "day",
+    type: "talk",
+    titleEn:
+      "Gave a tutorial, Understanding Art & Culture, at ICMR 2026 in Amsterdam.",
+    titleZh: "在 ICMR 2026（阿姆斯特丹）主讲教程《Understanding Art & Culture》。",
+    links: [
+      {
+        label: "Understanding Art & Culture",
+        href: "/publications/understanding-art-and-culture",
+      },
+    ],
+  },
+  {
     id: "siggraph-26-acceptance",
     date: "2026-04-23",
     precision: "day",
