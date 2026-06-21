@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
+import { localePrefixFor } from "@/i18n/routing";
 import { useTheme } from "./ThemeProvider";
 import { useParams } from "next/navigation";
 import { useState } from "react";
@@ -27,23 +28,16 @@ export default function Nav() {
 
   const switchLocale = () => {
     if (typeof window === "undefined") return;
-    // Read the current path straight from the browser. Don't trust
-    // next-intl's usePathname here: with localePrefix "as-needed" plus
-    // a static-export rewrite that moves /en/* to the root, its idea of
-    // the locale prefix can drift from what's actually on disk.
-    const fullPath = window.location.pathname;
-    // Strip a leading /zh segment if present, leaving the bare path.
-    let barePath = fullPath.replace(/^\/zh(?=\/|$)/, "");
+    // Read the current path straight from the browser, strip whichever
+    // locale prefix it currently carries to get the bare in-locale path,
+    // then re-add the target locale's prefix. localePrefixFor encodes the
+    // dev-vs-production rule (see routing.ts), so this stays correct in both
+    // the dev server and the static-export build.
+    let barePath = window.location.pathname.replace(/^\/(en|zh)(?=\/|$)/, "");
     if (!barePath) barePath = "/";
-    // Default locale (en) is served at the root; non-default gets a prefix.
-    let target: string;
-    if (otherLocale === "en") {
-      target = barePath;
-    } else {
-      target =
-        barePath === "/" ? `/${otherLocale}/` : `/${otherLocale}${barePath}`;
-    }
-    window.location.href = target;
+    const prefix = localePrefixFor(otherLocale);
+    window.location.href =
+      barePath === "/" ? `${prefix}/` : `${prefix}${barePath}`;
   };
 
   return (
