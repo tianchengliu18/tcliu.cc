@@ -59,7 +59,14 @@ function AboutContent({ locale }: { locale: string }) {
               {isZh ? (
                 <>
                   <p>
-                    我是刘天成，香港科技大学（广州）计算媒体与艺术在读博士，导师{" "}
+                    我是刘天成，
+                    <a href="https://www.hkust-gz.edu.cn/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      香港科技大学（广州）
+                    </a>
+                    <a href="https://cma.hkust-gz.edu.cn/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      计算媒体与艺术
+                    </a>
+                    在读博士，导师{" "}
                     <a href="http://www.art4.gift/" target="_blank" rel="noopener noreferrer" className={linkClass}>
                       张康
                     </a>
@@ -67,7 +74,15 @@ function AboutContent({ locale }: { locale: string }) {
                     <a href="https://cma.hkust-gz.edu.cn/faculty-regular/chen-liang/" target="_blank" rel="noopener noreferrer" className={linkClass}>
                       梁宸
                     </a>
-                    。目前在阿姆斯特丹大学 MultiX 实验室担任访问研究员，与{" "}
+                    。目前在
+                    <a href="https://www.uva.nl/en" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      阿姆斯特丹大学
+                    </a>
+                    {" "}
+                    <a href="https://multix.io/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      MultiX 实验室
+                    </a>
+                    担任访问研究员，与{" "}
                     <a href="https://nanne.github.io/" target="_blank" rel="noopener noreferrer" className={linkClass}>
                       Nanne van Noord
                     </a>{" "}
@@ -80,7 +95,15 @@ function AboutContent({ locale }: { locale: string }) {
               ) : (
                 <>
                   <p>
-                    I&apos;m Tiancheng LIU, a Ph.D. candidate in Computational Media and Arts at HKUST (Guangzhou), supervised by{" "}
+                    I&apos;m Tiancheng LIU, a Ph.D. candidate in{" "}
+                    <a href="https://cma.hkust-gz.edu.cn/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      Computational Media and Arts
+                    </a>{" "}
+                    at{" "}
+                    <a href="https://www.hkust-gz.edu.cn/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      HKUST (Guangzhou)
+                    </a>
+                    , supervised by{" "}
                     <a href="http://www.art4.gift/" target="_blank" rel="noopener noreferrer" className={linkClass}>
                       Kang Zhang
                     </a>{" "}
@@ -88,7 +111,15 @@ function AboutContent({ locale }: { locale: string }) {
                     <a href="https://cma.hkust-gz.edu.cn/faculty-regular/chen-liang/" target="_blank" rel="noopener noreferrer" className={linkClass}>
                       Chen Liang
                     </a>
-                    . I&apos;m currently a visiting researcher at the University of Amsterdam&apos;s MultiX Lab, working with{" "}
+                    . I&apos;m currently a visiting researcher at the{" "}
+                    <a href="https://www.uva.nl/en" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      University of Amsterdam
+                    </a>
+                    &apos;s{" "}
+                    <a href="https://multix.io/" target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      MultiX Lab
+                    </a>
+                    , working with{" "}
                     <a href="https://nanne.github.io/" target="_blank" rel="noopener noreferrer" className={linkClass}>
                       Nanne van Noord
                     </a>
