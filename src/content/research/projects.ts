@@ -70,16 +70,16 @@ export const aestheticsProjects: ResearchProject[] = [
 export const embodiedProjects: ResearchProject[] = [
   {
     id: "brushu",
-    titleEn: "BruSH\u00da",
-    titleZh: "BruSH\u00da \u7b14\u672f",
+    titleEn: "BruSH\u016a",
+    titleZh: "BruSH\u016a \u7b14\u672f",
     descriptionEn:
       "A perceptual lens that translates implicit micro-actions in calligraphy writing into cross-modal cues, supporting in-the-moment noticing and post-hoc reflection for expert calligraphers.",
     descriptionZh:
       "\u4e00\u4e2a\u5c06\u4e66\u6cd5\u4e66\u5199\u8fc7\u7a0b\u4e2d\u7684\u9690\u6027\u5fae\u52a8\u4f5c\u8f6c\u5316\u4e3a\u8de8\u6a21\u6001\u7ebf\u7d22\u7684\u611f\u77e5\u900f\u955c\uff0c\u652f\u6301\u4e13\u4e1a\u4e66\u6cd5\u5bb6\u7684\u5373\u65f6\u611f\u77e5\u548c\u4e8b\u540e\u53cd\u601d\u3002",
-    venue: "SIGGRAPH '25 Art Papers",
-    year: 2025,
+    venue: "SIGGRAPH '26",
+    year: 2026,
     tags: ["calligraphy", "embodied-interaction"],
-    links: [],
+    links: [{ label: "DOI", url: "https://doi.org/10.1145/3816090" }],
   },
   {
     id: "poemotion",
@@ -123,10 +123,10 @@ export const performanceProjects: ResearchProject[] = [
       "A decolonial approach to interactive music performance, repurposing Chinese women\u2019s everyday objects as digital musical instruments through embodied gestures and human-AI co-creation.",
     descriptionZh:
       "\u4e00\u79cd\u53bb\u6b96\u6c11\u5316\u7684\u4ea4\u4e92\u97f3\u4e50\u8868\u6f14\u65b9\u6cd5\uff0c\u5c06\u4e2d\u56fd\u5973\u6027\u65e5\u5e38\u7269\u54c1\u901a\u8fc7\u5177\u8eab\u624b\u52bf\u548c\u4eba\u673a\u5171\u521b\u8f6c\u5316\u4e3a\u6570\u5b57\u4e50\u5668\u3002",
-    venue: "SIGGRAPH '25 Art Papers",
-    year: 2025,
+    venue: "SIGGRAPH '26",
+    year: 2026,
     tags: ["co-creation", "embodied-interaction"],
-    links: [],
+    links: [{ label: "DOI", url: "https://doi.org/10.1145/3816078" }],
   },
   {
     id: "finhertip",
@@ -136,7 +136,7 @@ export const performanceProjects: ResearchProject[] = [
       "Embodied identity and human-AI co-creation in accessible musical performance.",
     descriptionZh:
       "\u5177\u8eab\u8eab\u4efd\u4e0e\u4eba\u673a\u5171\u521b\u5728\u65e0\u969c\u788d\u97f3\u4e50\u8868\u6f14\u4e2d\u7684\u5e94\u7528\u3002",
-    venue: "SIGGRAPH Asia '25 Art Papers",
+    venue: "SIGGRAPH Asia '25",
     year: 2025,
     tags: ["co-creation", "embodied-interaction"],
     links: [

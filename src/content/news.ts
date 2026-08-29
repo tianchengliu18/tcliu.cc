@@ -57,9 +57,9 @@ export const news: NewsItem[] = [
     precision: "day",
     type: "paper",
     titleEn:
-      "Two papers accepted to SIGGRAPH 2026 Art Papers: BruSHŪ and To Perform / To Live.",
+      "Two papers accepted to ACM SIGGRAPH 2026: BruSHŪ and To Perform / To Live.",
     titleZh:
-      "两篇论文被 SIGGRAPH 2026 Art Papers 录用：BruSHŪ 与 To Perform / To Live。",
+      "两篇论文被 ACM SIGGRAPH 2026 录用：BruSHŪ 与 To Perform / To Live。",
     links: [
       { label: "BruSHŪ", href: "/publications/brushu" },
       { label: "To Perform / To Live", href: "/publications/to-perform-to-live" },
