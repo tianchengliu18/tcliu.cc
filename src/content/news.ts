@@ -37,6 +37,28 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "siggraph-2026-to-perform-to-live-presentation",
+    date: "2026-07-22",
+    precision: "day",
+    type: "talk",
+    titleEn:
+      "Presented To Perform / To Live at ACM SIGGRAPH 2026 in Los Angeles.",
+    titleZh:
+      "在洛杉矶举行的 ACM SIGGRAPH 2026 上展示《To Perform / To Live》。",
+    links: [
+      { label: "To Perform / To Live", href: "/publications/to-perform-to-live" },
+    ],
+  },
+  {
+    id: "siggraph-2026-brushu-presentation",
+    date: "2026-07-21",
+    precision: "day",
+    type: "talk",
+    titleEn: "Presented BruSHŪ at ACM SIGGRAPH 2026 in Los Angeles.",
+    titleZh: "在洛杉矶举行的 ACM SIGGRAPH 2026 上展示《BruSHŪ》。",
+    links: [{ label: "BruSHŪ", href: "/publications/brushu" }],
+  },
+  {
     id: "icmr-2026-tutorial",
     date: "2026-06-16",
     precision: "day",
