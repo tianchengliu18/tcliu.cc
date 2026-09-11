@@ -9,7 +9,7 @@ import {
   type NewsItem,
 } from "@/content/news";
 import EmailButton from "@/components/EmailButton";
-import { HomeSubscribeModal } from "@/components/Subscribe";
+import { HomeSubscribeModal, SubscribeCard } from "@/components/Subscribe";
 
 export default async function HomePage({
   params,
@@ -107,23 +107,24 @@ function HomeContent({ locale }: { locale: string }) {
 
         {/* Latest news */}
         <div className="mt-20">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-[1.25rem] font-semibold text-text-primary">
-            {t("latest")}
-          </h2>
-          <Link
-            href="/news"
-            className="text-base text-text-tertiary hover:text-accent transition-colors"
-          >
-            {t("viewAll")} &rarr;
-          </Link>
-        </div>
+          {subscribeAction && <SubscribeCard action={subscribeAction} />}
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-[1.25rem] font-semibold text-text-primary">
+              {t("latest")}
+            </h2>
+            <Link
+              href="/news"
+              className="text-base text-text-tertiary hover:text-accent transition-colors"
+            >
+              {t("viewAll")} &rarr;
+            </Link>
+          </div>
 
-        <div className="space-y-4">
-          {latestNews(3).map((item) => (
-            <LatestCard key={item.id} item={item} locale={locale} />
-          ))}
-        </div>
+          <div className="space-y-4">
+            {latestNews(3).map((item) => (
+              <LatestCard key={item.id} item={item} locale={locale} />
+            ))}
+          </div>
         </div>
       </div>
     </>
