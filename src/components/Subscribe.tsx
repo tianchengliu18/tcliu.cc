@@ -83,6 +83,7 @@ function SubscribeForm({
         placeholder={t("emailPlaceholder")}
         className="min-w-0 flex-1 rounded-md border border-border bg-bg-primary px-4 py-2 text-base text-text-primary outline-none transition-colors placeholder:text-text-tertiary focus:border-accent focus:ring-2 focus:ring-accent/15"
       />
+      <input type="hidden" name="embed" value="1" />
       <button
         type="submit"
         className="shrink-0 rounded-md bg-accent px-5 py-2 text-base font-medium text-white transition-colors hover:bg-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg-card"
