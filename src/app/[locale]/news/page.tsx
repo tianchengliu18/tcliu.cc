@@ -6,6 +6,7 @@ import {
   newsTypeLabel,
   type NewsItem,
 } from "@/content/news";
+import { SubscribeCard } from "@/components/Subscribe";
 
 export default async function NewsPage({
   params,
@@ -16,6 +17,7 @@ export default async function NewsPage({
   setRequestLocale(locale);
   const isZh = locale === "zh";
   const items = sortedNews();
+  const subscribeAction = process.env.NEWSLETTER_FORM_ACTION;
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-16">
@@ -27,6 +29,8 @@ export default async function NewsPage({
           ? "近期更新：论文、里程碑、参会与行旅。"
           : "Recent updates: papers, milestones, and travel."}
       </p>
+
+      {subscribeAction && <SubscribeCard action={subscribeAction} />}
 
       <div className="space-y-4">
         {items.map((item) => (

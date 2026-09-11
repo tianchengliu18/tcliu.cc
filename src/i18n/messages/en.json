@@ -52,6 +52,18 @@
     "minRead": "min read",
     "noPostsYet": "Posts coming soon..."
   },
+  "subscribe": {
+    "eyebrow": "Newsletter",
+    "title": "Subscribe to research updates",
+    "description": "Occasional updates on my new papers, projects, and artworks. No advertising and no crowded inbox.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "button": "Subscribe",
+    "privacy": "Your email is used only for these updates, and you can unsubscribe at any time. Please check your inbox to confirm after submitting.",
+    "skip": "Skip for now",
+    "alreadySubscribed": "Already subscribed — don't show again",
+    "close": "Close subscription dialog"
+  },
   "about": {
     "title": "About",
     "storyTitle": "My Story",

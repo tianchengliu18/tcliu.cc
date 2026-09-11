@@ -9,6 +9,7 @@ import {
   type NewsItem,
 } from "@/content/news";
 import EmailButton from "@/components/EmailButton";
+import { HomeSubscribeModal } from "@/components/Subscribe";
 
 export default async function HomePage({
   params,
@@ -24,10 +25,13 @@ export default async function HomePage({
 function HomeContent({ locale }: { locale: string }) {
   const t = useTranslations("home");
   const isZh = locale === "zh";
+  const subscribeAction = process.env.NEWSLETTER_FORM_ACTION;
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
-      <div className="flex flex-col md:flex-row items-start gap-12">
+    <>
+      {subscribeAction && <HomeSubscribeModal action={subscribeAction} />}
+      <div className="max-w-4xl mx-auto px-6 py-16 md:py-24">
+        <div className="flex flex-col md:flex-row items-start gap-12">
         {/* Text */}
         <div className="flex-1 space-y-6">
           <div>
@@ -99,10 +103,10 @@ function HomeContent({ locale }: { locale: string }) {
             />
           </div>
         </div>
-      </div>
+        </div>
 
-      {/* Latest news */}
-      <div className="mt-20">
+        {/* Latest news */}
+        <div className="mt-20">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-[1.25rem] font-semibold text-text-primary">
             {t("latest")}
@@ -120,8 +124,9 @@ function HomeContent({ locale }: { locale: string }) {
             <LatestCard key={item.id} item={item} locale={locale} />
           ))}
         </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
