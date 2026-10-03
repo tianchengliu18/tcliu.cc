@@ -6,6 +6,13 @@ export interface Author {
   affiliations?: number[];
 }
 
+export interface PublicationRanking {
+  /** Short badge text shown beside the venue, e.g. "CCF A". */
+  label: string;
+  /** Longer explanation exposed as a native tooltip. */
+  description: string;
+}
+
 export interface Publication {
   id: number;
   /** URL-safe identifier; used for the detail page route. */
@@ -19,6 +26,8 @@ export interface Publication {
   venue: string;
   /** Short venue badge shown in the top-left of the teaser (e.g. "ACM MM 25"). */
   venueShort: string;
+  /** Optional venue-level rankings or indexing labels. */
+  rankings?: PublicationRanking[];
   year: number;
   isFirstAuthor: boolean;
   status: "published";
@@ -36,6 +45,36 @@ export interface Publication {
   /** BibTeX entry shown on the detail page (kept as a raw string). */
   bibtex?: string;
 }
+
+const CCF_A: PublicationRanking = {
+  label: "CCF A",
+  description: "CCF-recommended A-tier venue",
+};
+
+const CCF_B: PublicationRanking = {
+  label: "CCF B",
+  description: "CCF-recommended B-tier venue",
+};
+
+const CSSCI: PublicationRanking = {
+  label: "CSSCI",
+  description: "CSSCI source collection",
+};
+
+const ICORE_C: PublicationRanking = {
+  label: "ICORE C",
+  description: "ICORE 2026 C-ranked venue",
+};
+
+const EI_COMPENDEX: PublicationRanking = {
+  label: "EI Compendex",
+  description: "Proceedings indexed by Ei Compendex",
+};
+
+const ACM_ICPS: PublicationRanking = {
+  label: "ACM ICPS",
+  description: "Published in the ACM International Conference Proceedings Series",
+};
 
 export const publications: Publication[] = [
   {
@@ -55,6 +94,7 @@ export const publications: Publication[] = [
     ],
     venue: "ACM SIGGRAPH 2026 (SIGGRAPH '26)",
     venueShort: "SIGGRAPH 26",
+    rankings: [CCF_A],
     year: 2026,
     isFirstAuthor: true,
     status: "published",
@@ -98,6 +138,7 @@ export const publications: Publication[] = [
     ],
     venue: "ACM SIGGRAPH 2026 (SIGGRAPH '26)",
     venueShort: "SIGGRAPH 26",
+    rankings: [CCF_A],
     year: 2026,
     isFirstAuthor: false,
     status: "published",
@@ -137,6 +178,7 @@ export const publications: Publication[] = [
     venue:
       "International Conference on Multimedia Retrieval (ICMR '26), Tutorial, Amsterdam, Netherlands, 3 pages",
     venueShort: "ICMR 26",
+    rankings: [CCF_B],
     year: 2026,
     doi: "10.1145/3805622.3816071",
     isFirstAuthor: false,
@@ -167,6 +209,7 @@ export const publications: Publication[] = [
     ],
     venue: "ACM SIGGRAPH Asia 2025 (SIGGRAPH Asia '25)",
     venueShort: "SIGGRAPH Asia 25",
+    rankings: [CCF_A],
     year: 2025,
     doi: "10.1145/3757369.3767621",
     isFirstAuthor: false,
@@ -189,6 +232,7 @@ export const publications: Publication[] = [
     ],
     venue: "ACM Multimedia 2025 (MM '25), pp. 6730-6739",
     venueShort: "ACM MM 25",
+    rankings: [CCF_A],
     year: 2025,
     doi: "10.1145/3746027.3754816",
     isFirstAuthor: true,
@@ -234,6 +278,7 @@ export const publications: Publication[] = [
     ],
     venue: "Digital Humanities, no. 03, pp. 1-10",
     venueShort: "DH 25",
+    rankings: [CSSCI],
     year: 2025,
     isFirstAuthor: false,
     status: "published",
@@ -252,6 +297,7 @@ export const publications: Publication[] = [
     ],
     venue: "VINCI '24",
     venueShort: "VINCI 24",
+    rankings: [ICORE_C, EI_COMPENDEX, ACM_ICPS],
     year: 2024,
     doi: "10.1145/3678698.3687175",
     isFirstAuthor: true,

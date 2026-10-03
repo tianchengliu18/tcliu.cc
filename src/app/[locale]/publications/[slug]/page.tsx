@@ -4,6 +4,7 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { publications, getPublicationBySlug } from "@/content/publications";
 import AuthorList from "@/components/AuthorList";
+import PublicationRankings from "@/components/PublicationRankings";
 
 export function generateStaticParams() {
   return publications.map((p) => ({ slug: p.slug }));
@@ -40,6 +41,7 @@ export default async function PublicationDetailPage({ params }: PageProps) {
         <span className="px-2.5 py-0.5 rounded bg-accent/10 text-accent text-[12px] font-semibold tracking-wide uppercase">
           {pub.venueShort}
         </span>
+        <PublicationRankings rankings={pub.rankings} />
         {pub.isFirstAuthor && (
           <span className="text-[12px] text-text-tertiary inline-flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-accent" />

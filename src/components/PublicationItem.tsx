@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import type { Publication } from "@/content/publications";
 import AuthorList from "@/components/AuthorList";
+import PublicationRankings from "@/components/PublicationRankings";
 
 interface Props {
   pub: Publication;
@@ -84,9 +85,12 @@ export default function PublicationItem({ pub }: Props) {
             </p>
           )}
 
-          <p className="text-[13px] text-text-tertiary italic mb-3">
-            {pub.venue}, {pub.year}
-          </p>
+          <div className="mb-3 flex flex-wrap items-center gap-2">
+            <p className="text-[13px] text-text-tertiary italic">
+              {pub.venue}, {pub.year}
+            </p>
+            <PublicationRankings rankings={pub.rankings} />
+          </div>
 
           {links.length > 0 && (
             <div className="flex flex-wrap gap-2">
