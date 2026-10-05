@@ -1,0 +1,78 @@
+% Shared CV layout and bibliography settings.
+% Compile from the repository root, for example:
+%   latexmk -xelatex en/main-en.tex
+%   latexmk -xelatex zh/main-zh.tex
+
+\usepackage{geometry}
+\geometry{a4paper, margin=2cm}
+
+\usepackage{fontspec}
+\IfFontExistsTF{Libertinus Serif}{\setmainfont{Libertinus Serif}}{}
+\IfFontExistsTF{Libertinus Sans}{\setsansfont{Libertinus Sans}}{}
+
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+\definecolor{lindred}{RGB}{128,0,0}
+\definecolor{textgray}{RGB}{70,70,70}
+
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=lindred
+]{hyperref}
+
+\usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=ydnt,
+    defernumbers=true,
+    maxbibnames=99,
+    minbibnames=99,
+    giveninits=false,
+    doi=false,
+    url=true,
+    isbn=false
+]{biblatex}
+
+\providecommand{\cvbibresource}{references.bib}
+\addbibresource{\cvbibresource}
+
+\DeclareFieldFormat{url}{\href{#1}{[Online]}}
+
+\newcommand*{\iftianchengliu}{%
+  \ifboolexpr{
+    test {\ifdefstring{\namepartfamily}{Liu}}
+    and
+    test {\ifdefstring{\namepartgiven}{Tiancheng}}
+  }%
+}
+
+\renewcommand*{\mkbibnamegiven}[1]{%
+  \iftianchengliu{\mkbibbold{#1}}{#1}%
+}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+  \iftianchengliu{\mkbibbold{#1}}{#1}%
+}
+
+\defbibfilter{accepted}{ keyword={accepted} }
+\defbibfilter{published}{ keyword={published} }
+\defbibfilter{submitted}{ keyword={submitted} }
+
+\setlist{noitemsep, topsep=2pt}
+
+\titleformat{\section}
+  {\sffamily\large\bfseries}
+  {}
+  {0pt}
+  {\MakeUppercase}
+  [\titlerule]
+
+\titlespacing*{\section}{0pt}{0.9\baselineskip}{0.6\baselineskip}
+\setlength{\headheight}{15pt}

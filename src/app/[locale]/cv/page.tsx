@@ -24,32 +24,32 @@ export default async function CVPage({
 
 function CVContent({ isZh }: { isZh: boolean }) {
   const t = useTranslations("cv");
+  const pdfUrl = isZh ? "/cv-zh.pdf" : "/cv-en.pdf";
 
-  const buttons: { href: string; label: string; primary: boolean }[] = isZh
+  const buttons: { href: string; label: string; primary: boolean; filename: string }[] = isZh
     ? [
-        { href: "/cv-zh.pdf", label: "下载中文版 CV (PDF)", primary: true },
-        { href: "/cv-en.pdf", label: "Download English CV (PDF)", primary: false },
+        { href: "/cv-zh.pdf", label: "下载中文版 CV (PDF)", primary: true, filename: "Tiancheng-Liu-CV-zh.pdf" },
+        { href: "/cv-en.pdf", label: "Download English CV (PDF)", primary: false, filename: "Tiancheng-Liu-CV-en.pdf" },
       ]
     : [
-        { href: "/cv-en.pdf", label: "Download English CV (PDF)", primary: true },
-        { href: "/cv-zh.pdf", label: "下载中文版 CV (PDF)", primary: false },
+        { href: "/cv-en.pdf", label: "Download English CV (PDF)", primary: true, filename: "Tiancheng-Liu-CV-en.pdf" },
+        { href: "/cv-zh.pdf", label: "下载中文版 CV (PDF)", primary: false, filename: "Tiancheng-Liu-CV-zh.pdf" },
       ];
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16">
-      <div className="max-w-lg mx-auto text-center py-20">
-        <h1 className="font-body text-[2.5rem] font-bold text-text-primary mb-4">
+    <div className="max-w-5xl mx-auto px-6 py-16">
+      <div className="text-center mb-8">
+        <h1 className="font-body text-[2.5rem] font-bold text-text-primary mb-3">
           {t("title")}
         </h1>
-        <p className="text-text-secondary mb-8">{t("description")}</p>
+        <p className="text-text-secondary mb-6">{t("description")}</p>
 
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-wrap justify-center gap-3">
           {buttons.map((b) => (
             <a
               key={b.href}
               href={b.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              download={b.filename}
               className={
                 b.primary
                   ? "inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-md hover:bg-accent-hover transition-colors font-medium text-base"
@@ -77,6 +77,26 @@ function CVContent({ isZh }: { isZh: boolean }) {
 
         <p className="text-[13px] text-text-tertiary mt-4">{t("lastUpdated")}</p>
       </div>
+
+      <div className="overflow-hidden rounded-lg border border-border-light bg-bg-card shadow-sm">
+        <iframe
+          src={`${pdfUrl}#toolbar=1&navpanes=0`}
+          title={isZh ? "中文版 CV 预览" : "English CV preview"}
+          className="block w-full h-[75vh] min-h-[640px] bg-white"
+        >
+          <p>
+            {isZh ? "浏览器无法显示 PDF。" : "Your browser cannot display this PDF."}{" "}
+            <a href={pdfUrl}>{isZh ? "打开 CV" : "Open the CV"}</a>
+          </p>
+        </iframe>
+      </div>
+      <p className="mt-3 text-center text-[13px] text-text-tertiary">
+        {isZh ? "如果预览未显示，" : "If the preview does not appear, "}
+        <a href={pdfUrl} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+          {isZh ? "在新窗口打开 PDF" : "open the PDF in a new tab"}
+        </a>
+        {isZh ? "。" : "."}
+      </p>
     </div>
   );
 }

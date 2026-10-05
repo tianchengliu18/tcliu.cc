@@ -84,9 +84,9 @@
   },
   "cv": {
     "title": "\u5c65\u5386",
-    "description": "\u4e0b\u8f7d\u6211\u7684\u5b8c\u6574\u5c65\u5386\uff0c\u4e86\u89e3\u6211\u7684\u5b66\u672f\u548c\u4e13\u4e1a\u80cc\u666f\u3002",
+    "description": "在下方阅读简历，或下载中文、英文 PDF。",
     "download": "\u4e0b\u8f7d CV (PDF)",
-    "lastUpdated": "\u6700\u540e\u66f4\u65b0\uff1a2026\u5e744\u6708"
+    "lastUpdated": "最后更新：2026年10月"
   },
   "footer": {
     "copyright": "\u00a9 2026 \u5218\u5929\u6210\u3002\u57fa\u4e8e Next.js \u6784\u5efa\u3002"

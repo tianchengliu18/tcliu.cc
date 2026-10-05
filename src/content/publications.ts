@@ -30,7 +30,7 @@ export interface Publication {
   rankings?: PublicationRanking[];
   year: number;
   isFirstAuthor: boolean;
-  status: "published";
+  status: "published" | "accepted";
   tags: string[];
   /** Path under /public, e.g. "/publications/teasers/brushu.jpg". */
   teaser?: string;
@@ -77,6 +77,61 @@ const ACM_ICPS: PublicationRanking = {
 };
 
 export const publications: Publication[] = [
+  {
+    id: 12,
+    slug: "full-page-calligraphy-detection",
+    title:
+      "Full-Page Chinese Calligraphy Character Detection: A Dataset and Benchmark with Integrity-Preserving Tiling and SDAC-Det",
+    authorList: [
+      { name: "T. Liu", isMe: true },
+      { name: "N. van Noord" },
+      { name: "C. Liang" },
+      { name: "K. Zhang" },
+    ],
+    venue: "ECCV 2026 VISART VIII (to appear)",
+    venueShort: "ECCV VISART 26",
+    year: 2026,
+    isFirstAuthor: true,
+    status: "accepted",
+    tags: ["calligraphy", "deep-learning", "cultural-heritage"],
+    teaser: "/publications/teasers/full-page-calligraphy-detection.png",
+    abstract:
+      "Full-page Chinese calligraphy character detection is challenging because artworks vary in layout, scale, and resolution. We introduce a benchmark of 2,144 pages and 189,156 character boxes from 13 source subsets, with in-domain and held-out-domain evaluation. Integrity-preserving tiling avoids ambiguous supervision from truncated characters, while SDAC-Det combines local tile features with full-page density and scale priors. The benchmark provides a foundation for analyzing calligraphy beyond standard OCR.",
+    bibtex: `@inproceedings{Liu2026SDACDet,
+  author    = {Liu, Tiancheng and van Noord, Nanne and Liang, Chen and Zhang, Kang},
+  title     = {Full-Page Chinese Calligraphy Character Detection: A Dataset and Benchmark with Integrity-Preserving Tiling and {SDAC-Det}},
+  booktitle = {VISART VIII: Vision for Art and Culture Workshop, European Conference on Computer Vision (ECCV)},
+  year      = {2026},
+  note      = {Accepted; to appear}
+}`,
+  },
+  {
+    id: 13,
+    slug: "narrastone",
+    title: "NarraStone: Reimagining the Stone Stele as an AI-Era Apparatus of Synthetic Memory",
+    authorList: [
+      { name: "T. Liu", isMe: true },
+      { name: "S. Zhang" },
+      { name: "H. Qu" },
+      { name: "H. Zhou" },
+    ],
+    venue: "SIGGRAPH Asia 2026 Art Papers (to appear)",
+    venueShort: "SIGGRAPH Asia 26",
+    year: 2026,
+    isFirstAuthor: true,
+    status: "accepted",
+    tags: ["co-creation", "cultural-heritage"],
+    teaser: "/publications/teasers/narrastone.png",
+    abstract:
+      "NarraStone reimagines the stone stele through human–AI collaboration. Participants use a tangible, twistable cube to form Chinese characters that seed emergent narratives, which are visualized as projected calligraphic inscriptions. The work explores how collective interaction and generative AI can shape cultural memory and shared storytelling.",
+    bibtex: `@inproceedings{Liu2026NarraStone,
+  author    = {Liu, Tiancheng and Zhang, Shumeng and Qu, Hanyu and Zhou, Hanqin},
+  title     = {NarraStone: Reimagining the Stone Stele as an {AI}-Era Apparatus of Synthetic Memory},
+  booktitle = {Proceedings of the SIGGRAPH Asia 2026 Art Papers},
+  year      = {2026},
+  note      = {Accepted; to appear}
+}`,
+  },
   {
     id: 1,
     slug: "brushu",

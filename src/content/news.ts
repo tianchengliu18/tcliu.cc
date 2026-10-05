@@ -37,6 +37,45 @@ export interface NewsItem {
 
 export const news: NewsItem[] = [
   {
+    id: "ars-electronica-2026-brushu",
+    date: "2026-10-09",
+    precision: "day",
+    type: "exhibition",
+    titleEn: "BruSHŪ will be exhibited at Ars Electronica in Linz, Austria, 9–13 October 2026.",
+    titleZh: "BruSHŪ 将于 2026 年 10 月 9–13 日在奥地利林茨 Ars Electronica 展出。",
+    links: [
+      { label: "BruSHŪ", href: "/publications/brushu" },
+      { label: "Ars Electronica", href: "https://ars.electronica.art/negotiatinghumanity/en/notion/brushu/", external: true },
+    ],
+  },
+  {
+    id: "eccv-visart-2026-presentation",
+    date: "2026-10-08",
+    precision: "day",
+    type: "talk",
+    titleEn: "I will present our full-page Chinese calligraphy character detection paper at ECCV VISART in Malmö, Sweden.",
+    titleZh: "将于瑞典马尔默的 ECCV VISART 汇报整页中国书法字检测论文。",
+    links: [{ label: "Paper", href: "/publications/full-page-calligraphy-detection" }],
+  },
+  {
+    id: "siggraph-asia-2026-narrastone-acceptance",
+    date: "2026-10-01",
+    precision: "month",
+    type: "paper",
+    titleEn: "NarraStone was accepted to SIGGRAPH Asia 2026 Art Papers (to appear).",
+    titleZh: "NarraStone 被 SIGGRAPH Asia 2026 Art Papers 录用（即将发表）。",
+    links: [{ label: "NarraStone", href: "/publications/narrastone" }],
+  },
+  {
+    id: "eccv-visart-2026-acceptance",
+    date: "2026-10-01",
+    precision: "month",
+    type: "paper",
+    titleEn: "Our full-page Chinese calligraphy character detection paper was accepted to ECCV VISART 2026 (to appear).",
+    titleZh: "整页中国书法字检测论文被 ECCV VISART 2026 录用（即将发表）。",
+    links: [{ label: "Paper", href: "/publications/full-page-calligraphy-detection" }],
+  },
+  {
     id: "siggraph-2026-to-perform-to-live-presentation",
     date: "2026-07-22",
     precision: "day",

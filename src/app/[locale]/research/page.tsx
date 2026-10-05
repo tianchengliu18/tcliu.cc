@@ -44,7 +44,7 @@ export default async function ResearchPage({
             ? "一件书法作品承载视觉结构。笔画、章法、留白、平衡。结构很丰富，却难以测量。我研究机器如何量化这些结构，并将测量结果与人对作品的反应建立联系。一种方法是提取笔画和章法特征，通过回归与归因方法将其与观看者的人格特质关联。另一种方法是在作品上构建图结构，引导语言模型把空间结构转化为可读的评注。第三种方法把同样的逻辑用在篆刻上，通过统计与模型指标评价其美学特征。"
             : "A calligraphy work carries visual structure. Strokes, layout, white space, balance. The structure is rich, yet hard to measure. I study how a machine can quantify it and connect the measurements to the way people respond to the work. One approach extracts stroke and layout features and links them to viewer personality through regression and attribution. Another approach builds a graph over the composition and prompts a language model to render the spatial structure as commentary. A third approach measures structural and statistical features of seal carving to evaluate its aesthetic qualities."
         }
-        slugs={["kai-shu-aesthetics", "calligraphy-layout-llm", "seal-carving"]}
+        slugs={["full-page-calligraphy-detection", "kai-shu-aesthetics", "calligraphy-layout-llm", "seal-carving"]}
         isZh={isZh}
       />
 
@@ -76,7 +76,7 @@ export default async function ResearchPage({
             ? "一项创作实践承载身份。它承载性别、能力、文化记忆、个人历史。机器可以扁平化这些东西，也可以与它们并立。我研究机器如何作为伙伴而非工具加入这样的实践，以及什么样的设计能让创作者保持作者地位。一种方法是分析中国古诗中的情感，并生成与之呼应的书法笔画。另一种方法是把中国女性的日常物件改造为数字乐器，再通过人机共创把每次演出延伸为 3D 打印的触感作品。第三种方法是与一位盲人酷儿音乐家共同设计触觉串珠界面，把触觉手势映射为多层声音。"
             : "A creative practice carries identity. It carries gender, ability, cultural memory, and personal history. A machine can flatten these things or it can stand alongside them. I study how a machine can join such a practice as a partner rather than a tool, and what design choices keep the maker as the author. One approach analyzes emotion in classical Chinese poetry and generates expressive calligraphic strokes that respond to it. Another approach repurposes the everyday objects of Chinese women as digital musical instruments, then extends each performance into a 3D-printed tactile artifact through human-machine co-creation. A third approach co-designs a tangible beadwork interface with a blind, queer musician and maps tactile gestures to layered sound."
         }
-        slugs={["poemotion", "to-perform-to-live", "finhertip"]}
+        slugs={["narrastone", "poemotion", "to-perform-to-live", "finhertip"]}
         isZh={isZh}
       />
 

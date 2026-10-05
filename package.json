@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "cv:sync": "node scripts/sync-cv.mjs",
+    "predev": "npm run cv:sync",
     "dev": "next dev",
+    "prebuild": "npm run cv:sync",
     "build": "next build",
     "postbuild": "rsync -a out/en/ out/ && rm -rf out/en",
     "start": "next start",

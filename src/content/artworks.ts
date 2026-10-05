@@ -20,6 +20,7 @@ export const artworks: Artwork[] = [
     year: 2025,
     role: "lead",
     exhibitions: [
+      "Ars Electronica, Linz, Austria, 9–13 October 2026 (upcoming)",
       "\"Symbiotic Signals: Entangled Perceptions and Algorithms\", Shaw Auditorium, HKUST, 2026",
     ],
     paperVenue: "SIGGRAPH '26",

@@ -84,9 +84,9 @@
   },
   "cv": {
     "title": "Curriculum Vitae",
-    "description": "Download my full CV for a detailed overview of my academic and professional background.",
+    "description": "Read my CV below or download the English or Chinese PDF.",
     "download": "Download CV (PDF)",
-    "lastUpdated": "Last updated: April 2026"
+    "lastUpdated": "Last updated: October 2026"
   },
   "footer": {
     "copyright": "\u00a9 2026 Tiancheng LIU. Built with Next.js."
