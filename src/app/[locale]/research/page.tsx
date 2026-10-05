@@ -141,7 +141,7 @@ function PubChip({ slug }: { slug: string }) {
             alt=""
             fill
             sizes="80px"
-            className="object-cover"
+            className={pub.slug === "full-page-calligraphy-detection" ? "object-contain" : "object-cover"}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-text-tertiary text-[10px]">

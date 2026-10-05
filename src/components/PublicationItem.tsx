@@ -54,7 +54,7 @@ export default function PublicationItem({ pub }: Props) {
                 alt=""
                 fill
                 sizes="(min-width: 768px) 160px, 128px"
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                className={`${pub.slug === "full-page-calligraphy-detection" ? "object-contain" : "object-cover"} transition-transform duration-300 group-hover:scale-105`}
               />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center text-text-tertiary text-[11px]">

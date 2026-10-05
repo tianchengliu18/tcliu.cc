@@ -76,6 +76,30 @@ const ACM_ICPS: PublicationRanking = {
   description: "Published in the ACM International Conference Proceedings Series",
 };
 
+const ECCV_CCF_B: PublicationRanking = {
+  label: "ECCV: CCF B",
+  description:
+    "CCF 2026 ranks the ECCV main conference B. This VISART workshop paper is outside the scope of that ranking.",
+};
+
+const ECCV_ICORE_A_STAR: PublicationRanking = {
+  label: "ECCV: ICORE A*",
+  description:
+    "ICORE 2026 ranks the ECCV conference A*. VISART is a workshop, not a separately ranked venue.",
+};
+
+const SIGGRAPH_ASIA_ICORE_A_STAR: PublicationRanking = {
+  label: "SIGGRAPH Asia: ICORE A*",
+  description:
+    "ICORE 2026 ranks SIGGRAPH Asia A*. The Art Papers track is not separately ranked.",
+};
+
+const SIGGRAPH_ASIA_CCF_UNLISTED: PublicationRanking = {
+  label: "CCF: unlisted",
+  description:
+    "The CCF 2026 list includes SIGGRAPH but does not separately list SIGGRAPH Asia or its Art Papers track.",
+};
+
 export const publications: Publication[] = [
   {
     id: 12,
@@ -90,6 +114,7 @@ export const publications: Publication[] = [
     ],
     venue: "ECCV 2026 VISART VIII (to appear)",
     venueShort: "ECCV VISART 26",
+    rankings: [ECCV_CCF_B, ECCV_ICORE_A_STAR],
     year: 2026,
     isFirstAuthor: true,
     status: "accepted",
@@ -117,6 +142,7 @@ export const publications: Publication[] = [
     ],
     venue: "SIGGRAPH Asia 2026 Art Papers (to appear)",
     venueShort: "SIGGRAPH Asia 26",
+    rankings: [SIGGRAPH_ASIA_ICORE_A_STAR, SIGGRAPH_ASIA_CCF_UNLISTED],
     year: 2026,
     isFirstAuthor: true,
     status: "accepted",
