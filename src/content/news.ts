@@ -38,14 +38,16 @@ export interface NewsItem {
 export const news: NewsItem[] = [
   {
     id: "ars-electronica-2026-brushu",
-    date: "2026-10-09",
+    date: "2026-09-08",
     precision: "day",
     type: "exhibition",
-    titleEn: "BruSHŪ will be exhibited at Ars Electronica in Linz, Austria, 9–13 October 2026.",
-    titleZh: "BruSHŪ 将于 2026 年 10 月 9–13 日在奥地利林茨 Ars Electronica 展出。",
+    titleEn: "BruSHŪ was exhibited in Reality Flux: Sensing the Unseen at Ars Electronica in Linz, Austria, 8–13 September 2026.",
+    titleZh: "BruSHŪ 于 2026 年 9 月 8–13 日在奥地利林茨 Ars Electronica 的「Reality Flux: Sensing the Unseen」展览中展出。",
     links: [
       { label: "BruSHŪ", href: "/publications/brushu" },
       { label: "Ars Electronica", href: "https://ars.electronica.art/negotiatinghumanity/en/notion/brushu/", external: true },
+      { label: "CMA News", href: "https://cma.hkust-gz.edu.cn/reality-flux-sensing-the-unseen-2/", external: true },
+      { label: "Exhibition site", href: "https://ae2026.tcliu.cc/", external: true },
     ],
   },
   {

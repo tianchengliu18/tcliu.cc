@@ -20,7 +20,7 @@ export const artworks: Artwork[] = [
     year: 2025,
     role: "lead",
     exhibitions: [
-      "Ars Electronica, Linz, Austria, 9–13 October 2026 (upcoming)",
+      "Reality Flux: Sensing the Unseen, Ars Electronica, Linz, Austria, 8–13 September 2026",
       "\"Symbiotic Signals: Entangled Perceptions and Algorithms\", Shaw Auditorium, HKUST, 2026",
     ],
     paperVenue: "SIGGRAPH '26",
@@ -30,6 +30,8 @@ export const artworks: Artwork[] = [
       "\u4e66\u6cd5\u4f5c\u54c1\u5f80\u5f80\u4ee5\u6210\u54c1\u5f62\u6001\u88ab\u89c2\u770b\uff0c\u800c\u4e66\u5199\u8fc7\u7a0b\u4e2d\u7684\u9690\u6027\u5fae\u52a8\u4f5c\u2014\u2014\u8fb9\u754c\u3001\u8f6c\u6362\u3001\u65f6\u5e8f\u2014\u2014\u7a0d\u7eb5\u5373\u901d\u3002BruSH\u016a \u662f\u4e00\u4e2a\u611f\u77e5\u900f\u955c\uff0c\u5c06\u8fd9\u4e9b\u4e66\u5199\u8fc7\u7a0b\u7ebf\u7d22\u8f6c\u5316\u4e3a\u53ef\u89e3\u8bfb\u7684\u8de8\u6a21\u6001\u4fe1\u53f7\uff0c\u652f\u6301\u4e13\u4e1a\u4e66\u6cd5\u5bb6\u7684\u5373\u65f6\u611f\u77e5\u4e0e\u4e8b\u540e\u53cd\u601d\uff0c\u800c\u975e\u5c06\u7ec3\u4e60\u8f6c\u5316\u4e3a\u6559\u5b66\u6216\u8bc4\u4f30\u3002",
     links: [
       { label: "DOI", url: "https://doi.org/10.1145/3816090" },
+      { label: "CMA News", url: "https://cma.hkust-gz.edu.cn/reality-flux-sensing-the-unseen-2/" },
+      { label: "Exhibition site", url: "https://ae2026.tcliu.cc/" },
     ],
     image: "/artwork/images/brushu.png",
   },
