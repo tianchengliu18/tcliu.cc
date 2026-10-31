@@ -1,0 +1,5 @@
+{
+  "schema_version": "talk2ink.remote_monitor.v1",
+  "api_base": "https://poultry-convenience-opens-admission.trycloudflare.com",
+  "scope": "Read-only aggregate status. No raw files, logs, credentials or controls."
+}
