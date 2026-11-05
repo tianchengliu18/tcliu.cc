@@ -30,6 +30,15 @@ jobs:
         env:
           NEWSLETTER_FORM_ACTION: ${{ vars.NEWSLETTER_FORM_ACTION }}
 
+      - name: Add Talk2Ink annotation dataset from GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p out/talk2ink-annotation
+          gh release download talk2ink-annotation144-20261103 --repo tianchengliu18/tcliu.cc --pattern talk2ink_annotation144_data.zip --dir out/talk2ink-annotation
+          unzip -q out/talk2ink-annotation/talk2ink_annotation144_data.zip -d out/talk2ink-annotation
+          cp out/talk2ink-annotation/talk2ink_annotation144_data.zip out/talk2ink-annotation/talk2ink_annotation144.zip
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
