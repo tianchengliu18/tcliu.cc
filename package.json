@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "cv:sync": "node scripts/sync-cv.mjs",
+    "cv:build": "node scripts/build-cv.mjs",
+    "cv:clean": "node scripts/build-cv.mjs --clean",
     "predev": "npm run cv:sync",
     "dev": "next dev",
     "prebuild": "npm run cv:sync",
