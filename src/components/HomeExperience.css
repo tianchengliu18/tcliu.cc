@@ -1,0 +1,26 @@
+/* Temporary design-tool layers, removed when their real DOM element is built. */
+.build-visual { display: none; position: absolute; inset: 0; font-family: Arial, sans-serif; }
+.build-box { position: absolute; top: 0; left: 0; border: 1px solid var(--brush-color); background: color-mix(in srgb, var(--brush-color) 4%, transparent); transform-origin: top left; }
+.build-label, .build-size { position: absolute; z-index: 2; padding: 2px 5px; background: var(--brush-color); color: #fff; white-space: nowrap; font: 10px/1.5 Arial, sans-serif; border-radius: 2px; }
+.build-label { top: -23px; left: -1px; }
+.build-size { bottom: -24px; left: 50%; transform: translateX(-50%); }
+.build-box > i { position: absolute; width: 6px; height: 6px; border: 1px solid var(--brush-color); background: var(--bg-card); z-index: 3; }
+.build-box > i:nth-of-type(1) { left: -3px; top: -3px; }
+.build-box > i:nth-of-type(2) { right: -3px; top: -3px; }
+.build-box > i:nth-of-type(3) { right: -3px; bottom: -3px; }
+.build-box > i:nth-of-type(4) { left: -3px; bottom: -3px; }
+.build-preview { position: absolute; inset: 0; overflow: hidden; font-family: 'Crimson Pro', 'Noto Sans SC', serif; }
+.build-caret { position: absolute; top: 0; left: 0; width: 1.5px; background: var(--brush-color); animation: build-caret-blink .6s steps(2, jump-none) infinite; }
+.build-guide-x, .build-guide-y { position: absolute; opacity: .35; }
+.build-guide-x { left: 0; right: 0; border-top: 1px dashed var(--brush-color); }
+.build-guide-y { top: 0; bottom: 0; border-left: 1px dashed var(--brush-color); }
+.build-ruler { display: none; position: absolute; opacity: .65; background-color: var(--bg-primary); }
+.brush-overlay[data-active] .build-ruler { display: block; }
+.build-ruler-top { left: 0; top: 56px; right: 0; height: 12px; border-bottom: 1px solid var(--border); background-image: repeating-linear-gradient(90deg, var(--border) 0 1px, transparent 1px 10px); }
+.build-ruler-left { left: 0; top: 56px; bottom: 0; width: 12px; border-right: 1px solid var(--border); background-image: repeating-linear-gradient(0deg, var(--border) 0 1px, transparent 1px 10px); }
+.build-visual[data-kind='line'] .build-size, .build-visual[data-kind='line'] .build-preview { display: none; }
+.build-visual[data-kind='duplicate'] .build-size { background: #c34d5d; }
+@keyframes build-caret-blink { to { opacity: .15; } }
+@media (min-width: 1100px) { .build-ruler-top { left: 260px; top: 0; } .build-ruler-left { left: 260px; top: 0; } }
+@media (max-width: 600px) { .build-guide-x, .build-guide-y, .build-ruler { display: none !important; } }
+@media (min-width: 1100px) { .build-guide-x { left: 260px; } }

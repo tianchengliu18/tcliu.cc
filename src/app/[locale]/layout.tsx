@@ -56,7 +56,7 @@ export default async function LocaleLayout({
   const messages = (await import(`@/i18n/messages/${locale}.json`)).default;
 
   return (
-    <html lang={locale} suppressHydrationWarning className="h-full antialiased">
+    <html lang={locale} data-scroll-behavior="smooth" suppressHydrationWarning className="h-full antialiased">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
