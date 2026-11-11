@@ -67,7 +67,44 @@ function blueprint(container: HTMLElement) {
   return tasks;
 }
 
+/** Build a semantic task graph for standalone pages, without editing their content. */
+function pageBlueprint(container: HTMLElement) {
+  const tasks: Task[] = [];
+  const frames = new Map<HTMLElement, Task>();
+  const masters = new Map<Element, Task>();
+  const frameSelector = "article, a.group, div.border.rounded-lg";
+  const candidates = container.querySelectorAll<HTMLElement>(`${frameSelector}, h1, h2, h3, h4, p, li, a, img, iframe, video, hr`);
+  const textSelector = "h1,h2,h3,h4,p,li";
+  for (const element of candidates) {
+    if (element.closest("form, [role='dialog'], [data-build-ignore]")) continue;
+    const ancestorFrame = element.parentElement?.closest<HTMLElement>(frameSelector);
+    const isFrame = element.matches(frameSelector) && !ancestorFrame;
+    const textAncestor = element.parentElement?.closest<HTMLElement>(textSelector);
+    // Inline links and nested list text belong to their enclosing text layer.
+    if (!isFrame && textAncestor && container.contains(textAncestor)) continue;
+    if (!isFrame && element.tagName === "A" && element.querySelector("img")) continue;
+    const parent = ancestorFrame ? frames.get(ancestorFrame) : undefined;
+    const kind: Kind = isFrame ? "frame" : element.matches("img,iframe,video") ? "media" : element.tagName === "HR" ? "line" : "text";
+    const master = isFrame && element.parentElement ? masters.get(element.parentElement) : undefined;
+    const task: Task = { element, kind: master ? "duplicate" : kind, parent, master, done: false };
+    tasks.push(task);
+    if (isFrame) {
+      frames.set(element, task);
+      if (element.parentElement) masters.set(element.parentElement, task);
+    }
+  }
+  return tasks;
+}
+
 function preview(element: HTMLElement) {
+  // An embedded PDF/video is placed as a single media layer. Do not instantiate
+  // another viewer or start another video inside a temporary drag preview.
+  if (element.matches("iframe,video")) {
+    const placeholder = document.createElement("div");
+    placeholder.className = "build-media-placeholder";
+    placeholder.textContent = element.tagName === "IFRAME" ? "PDF" : "▶";
+    return placeholder;
+  }
   const clone = element.cloneNode(true) as HTMLElement;
   for (const node of [clone, ...clone.querySelectorAll<HTMLElement>("*")]) {
     node.removeAttribute("id");
@@ -88,17 +125,18 @@ function preview(element: HTMLElement) {
 const clamp = (value: number) => Math.max(0, Math.min(1, value));
 const ease = (value: number) => 1 - Math.pow(1 - clamp(value), 3);
 
-export default function HomeExperience({ children, isZh }: { children: React.ReactNode; isZh: boolean }) {
+export default function HomeExperience({ children, isZh, autoDetect = false }: { children: React.ReactNode; isZh: boolean; autoDetect?: boolean }) {
   const root = useRef<HTMLDivElement>(null);
+  const content = useRef<HTMLDivElement>(null);
   const layer = useRef<HTMLDivElement>(null);
   const controller = useRef<{ finish: () => void; replay: () => void } | null>(null);
   const [playing, setPlaying] = useState(true);
 
   useLayoutEffect(() => {
-    const container = root.current;
+    const container = content.current;
     const overlay = layer.current!;
     if (!container || !overlay) return;
-    const tasks = blueprint(container);
+    let tasks = autoDetect ? pageBlueprint(container) : blueprint(container);
     const pens = Array.from(overlay.querySelectorAll<HTMLElement>(".brush-cursor"));
     const visuals = Array.from(overlay.querySelectorAll<HTMLElement>(".build-visual"));
     const boxes = visuals.map(visual => visual.querySelector<HTMLElement>(".build-box")!);
@@ -280,6 +318,7 @@ export default function HomeExperience({ children, isZh }: { children: React.Rea
     const replay = () => {
       finish();
       if (reduced.matches) return;
+      if (autoDetect) tasks = pageBlueprint(container);
       rushingUntil = 0;
       lastScroll = scrollY;
       lastScrollTime = performance.now();
@@ -329,7 +368,14 @@ export default function HomeExperience({ children, isZh }: { children: React.Rea
     reduced.addEventListener("change", onPreference);
     document.addEventListener("visibilitychange", onVisibility);
     document.addEventListener("click", onAnchor);
+    // Filtering a publication list replaces React-owned nodes. Complete the
+    // current presentation instead of animating stale nodes or hiding results.
+    const observer = new MutationObserver(() => {
+      if (enabled) { finish(); setPlaying(false); }
+    });
+    if (autoDetect) observer.observe(container, { childList: true, subtree: true });
     return () => {
+      observer.disconnect();
       disposed = true;
       finish();
       controller.current = null;
@@ -341,10 +387,10 @@ export default function HomeExperience({ children, isZh }: { children: React.Rea
       document.removeEventListener("visibilitychange", onVisibility);
       document.removeEventListener("click", onAnchor);
     };
-  }, []);
+  }, [autoDetect]);
 
   return (
-    <div ref={root} className="home-experience">
+    <div ref={root} className={`home-experience${autoDetect ? " page-experience" : ""}`}>
       <div className="brush-toolbar">
         <span className="brush-swatch" aria-hidden="true">{brushes.map(brush => <i key={brush.name} style={{ background: brush.color }} />)}</span>
         <button type="button" onClick={() => {
@@ -352,7 +398,7 @@ export default function HomeExperience({ children, isZh }: { children: React.Rea
           setPlaying(!playing);
         }}>{playing ? (isZh ? "直接阅读" : "Skip animation") : (isZh ? "重播毛笔动画" : "Replay brushes")}</button>
       </div>
-      {children}
+      <div ref={content} className="experience-content">{children}</div>
       <div className="brush-overlay" ref={layer} aria-hidden="true">
         <div className="build-ruler build-ruler-top" /><div className="build-ruler build-ruler-left" />
         {brushes.map(brush => <div key={`${brush.name}-visual`} className="build-visual" style={{ "--brush-color": brush.color } as React.CSSProperties}>

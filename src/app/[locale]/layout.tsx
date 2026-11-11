@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import PageExperience from "@/components/PageExperience";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "../globals.css";
 
@@ -82,7 +83,7 @@ export default async function LocaleLayout({
         <ThemeProvider>
           <NextIntlClientProvider locale={locale} messages={messages}>
             <Nav />
-            <main className="flex-1 pt-14">{children}</main>
+            <main className="flex-1 pt-14"><PageExperience isZh={locale === "zh"}>{children}</PageExperience></main>
             <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>

@@ -83,12 +83,7 @@ function CVContent({ isZh }: { isZh: boolean }) {
           src={`${pdfUrl}#toolbar=1&navpanes=0`}
           title={isZh ? "中文版 CV 预览" : "English CV preview"}
           className="block w-full h-[75vh] min-h-[640px] bg-white"
-        >
-          <p>
-            {isZh ? "浏览器无法显示 PDF。" : "Your browser cannot display this PDF."}{" "}
-            <a href={pdfUrl}>{isZh ? "打开 CV" : "Open the CV"}</a>
-          </p>
-        </iframe>
+        />
       </div>
       <p className="mt-3 text-center text-[13px] text-text-tertiary">
         {isZh ? "如果预览未显示，" : "If the preview does not appear, "}

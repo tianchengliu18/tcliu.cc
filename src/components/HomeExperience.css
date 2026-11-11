@@ -1,4 +1,12 @@
 /* Temporary design-tool layers, removed when their real DOM element is built. */
+.experience-content { min-width: 0; }
+.page-experience > .brush-toolbar { top: 64px; }
+.page-experience .experience-content > div { padding-top: 88px; }
+.build-media-placeholder { display: grid; place-items: center; width: 100%; height: 100%; background: var(--bg-secondary); color: var(--text-secondary); font: 24px/1.5 Arial, sans-serif; }
+@media (min-width: 1100px) {
+  .page-experience > .brush-toolbar { top: auto; }
+  .page-experience .experience-content > div { padding-top: 64px; }
+}
 .build-visual { display: none; position: absolute; inset: 0; font-family: Arial, sans-serif; }
 .build-box { position: absolute; top: 0; left: 0; border: 1px solid var(--brush-color); background: color-mix(in srgb, var(--brush-color) 4%, transparent); transform-origin: top left; }
 .build-label, .build-size { position: absolute; z-index: 2; padding: 2px 5px; background: var(--brush-color); color: #fff; white-space: nowrap; font: 10px/1.5 Arial, sans-serif; border-radius: 2px; }
