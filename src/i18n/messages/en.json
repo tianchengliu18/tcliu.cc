@@ -36,6 +36,7 @@
     "title": "Publications",
     "published": "Published",
     "firstAuthor": "First Author",
+    "noResults": "No publications match these filters.",
     "allFilter": "All",
     "bibtex": "BibTeX"
   },

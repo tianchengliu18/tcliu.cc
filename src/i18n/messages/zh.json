@@ -36,6 +36,7 @@
     "title": "\u5b66\u672f\u53d1\u8868",
     "published": "\u5df2\u53d1\u8868",
     "firstAuthor": "\u7b2c\u4e00\u4f5c\u8005",
+    "noResults": "没有符合当前筛选条件的论文。",
     "allFilter": "\u5168\u90e8",
     "bibtex": "BibTeX"
   },

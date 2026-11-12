@@ -19,11 +19,13 @@ const allTags = [
 export default function PublicationsPage() {
   const t = useTranslations("publications");
   const [activeTag, setActiveTag] = useState("All");
+  const [firstAuthorOnly, setFirstAuthorOnly] = useState(false);
 
-  const filtered =
-    activeTag === "All"
-      ? publications
-      : publications.filter((p) => p.tags.includes(activeTag));
+  const filtered = publications.filter(
+    (p) =>
+      (activeTag === "All" || p.tags.includes(activeTag)) &&
+      (!firstAuthorOnly || p.isFirstAuthor),
+  );
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-16">
@@ -36,6 +38,8 @@ export default function PublicationsPage() {
         {allTags.map((tag) => (
           <button
             key={tag}
+            type="button"
+            aria-pressed={activeTag === tag}
             onClick={() => setActiveTag(tag)}
             className={`text-[13px] px-3 py-1.5 rounded-md border transition-colors ${
               activeTag === tag
@@ -48,16 +52,33 @@ export default function PublicationsPage() {
         ))}
       </div>
 
-      {/* Legend */}
+      {/* First-author filter */}
       <div className="flex items-center gap-4 mb-6 text-[13px] text-text-tertiary">
-        <div className="flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full bg-accent" />
+        <button
+          type="button"
+          aria-pressed={firstAuthorOnly}
+          onClick={() => setFirstAuthorOnly((previous) => !previous)}
+          className={`flex items-center gap-1.5 rounded-md border px-3 py-1.5 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
+            firstAuthorOnly
+              ? "bg-accent text-white border-accent"
+              : "border-border text-text-secondary hover:border-accent hover:text-accent"
+          }`}
+        >
+          <span
+            aria-hidden="true"
+            className={`w-2 h-2 rounded-full ${firstAuthorOnly ? "bg-white" : "bg-accent"}`}
+          />
           {t("firstAuthor")}
-        </div>
+        </button>
       </div>
 
       {/* Publications list */}
       <div>
+        {filtered.length === 0 && (
+          <p className="py-6 text-[13px] text-text-tertiary">
+            {t("noResults")}
+          </p>
+        )}
         {filtered.map((pub) => (
           <PublicationItem key={pub.id} pub={pub} />
         ))}
